@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --crema: #F5EDE0;
+  --verde-oliva: #6B783E;
+  --dorado: #C49E50;
+  --tierra: #BD886A;
+  --blanco-luminoso: #FDFAF6;
+  --oscuro: #3D3520;
+  --gris-borde: #E0D5C4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--crema);
+  color: var(--oscuro);
+}
+
+::selection {
+  background-color: #C49E5033;
+}
