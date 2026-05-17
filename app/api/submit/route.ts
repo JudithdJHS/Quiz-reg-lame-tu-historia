@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Fire-and-forget — responde inmediatamente, no espera a las APIs externas
-    Promise.allSettled([
+    await Promise.allSettled([
       registrarEnMailerLite(payload),
       registrarEnSheets(payload),
       ...(payload.flagAlertaCrisis ? [enviarAlertaCrisis(payload)] : []),
