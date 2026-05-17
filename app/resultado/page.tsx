@@ -21,7 +21,6 @@ function HeroFoto() {
         background: 'linear-gradient(135deg, #F5EDE0 0%, #EDD5B0 50%, #C49E5025 100%)',
       }}
     >
-      {/* Foto real — nítida, sin blur */}
       {!imgError && (
         <img
           src="/foto-ana-alex.jpg"
@@ -38,7 +37,6 @@ function HeroFoto() {
         />
       )}
 
-      {/* Overlay oscuro solo en la parte inferior para legibilidad del texto */}
       <div
         style={{
           position: 'absolute',
@@ -49,7 +47,6 @@ function HeroFoto() {
         }}
       />
 
-      {/* Texto sobre el hero */}
       <div
         style={{
           position: 'absolute',
@@ -160,10 +157,10 @@ export default function ResultadoPage() {
         />
       </header>
 
-      {/* [1] FOTO HERO con overlay y texto */}
+      {/* FOTO HERO */}
       <HeroFoto />
 
-      {/* Contenido del resultado con fade-in */}
+      {/* Contenido con fade-in */}
       <div
         className="transition-all duration-500 pb-16 mt-8"
         style={{
@@ -174,13 +171,149 @@ export default function ResultadoPage() {
         <div className="px-4">
           <ResultadoCard resultado={resultado} nombre={nombre} />
         </div>
+
+        {/* EXTRACTO VIDEO — Sesión 2 */}
+        <div className="mx-auto px-4 mt-12" style={{ maxWidth: '720px' }}>
+          <div style={{ borderTop: '1px solid #E0D5C4', paddingTop: '48px' }}>
+
+            <p style={{
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '0.75rem',
+              fontWeight: 700,
+              letterSpacing: '2px',
+              textTransform: 'uppercase',
+              color: '#6B783E',
+              marginBottom: '12px',
+              textAlign: 'center',
+            }}>
+              Tu primer regalo
+            </p>
+
+            <h2 style={{
+              fontFamily: 'Playfair Display, serif',
+              fontSize: 'clamp(1.5rem, 4vw, 2rem)',
+              color: '#3D3520',
+              textAlign: 'center',
+              marginBottom: '8px',
+              lineHeight: 1.3,
+            }}>
+              Sesión 2 — Reconociendo las heridas
+            </h2>
+
+            <p style={{
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '1rem',
+              color: '#8A7E6E',
+              textAlign: 'center',
+              marginBottom: '32px',
+              lineHeight: 1.7,
+            }}>
+              Este es el trabajo que no depende de tu pareja.<br />
+              Solo de ti.
+            </p>
+
+            {/* Player */}
+            <div style={{
+              position: 'relative',
+              paddingBottom: '56.25%',
+              height: 0,
+              overflow: 'hidden',
+              borderRadius: '4px',
+              background: '#EDE3D5',
+              boxShadow: '0 4px 24px rgba(61,53,32,0.12)',
+            }}>
+
+              {/* OPCIÓN A: YouTube — descomenta y pon el ID cuando tengas el video */}
+              {/* <iframe
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+                src="https://www.youtube.com/embed/VIDEO_ID?rel=0&modestbranding=1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              /> */}
+
+              {/* PLACEHOLDER — elimina este bloque cuando actives el video */}
+              <div style={{
+                position: 'absolute',
+                inset: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '16px',
+              }}>
+                <div style={{
+                  width: '64px',
+                  height: '64px',
+                  borderRadius: '50%',
+                  background: '#C49E50',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}>
+                  <svg width="24" height="24" fill="#FDFAF6" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+                <p style={{
+                  fontFamily: 'Playfair Display, serif',
+                  fontStyle: 'italic',
+                  color: '#8A7E6E',
+                  fontSize: '1rem',
+                }}>
+                  El extracto estará disponible muy pronto
+                </p>
+              </div>
+
+            </div>
+
+            {/* CTA después del video */}
+            <div style={{ textAlign: 'center', marginTop: '40px' }}>
+              <p style={{
+                fontFamily: 'Inter, sans-serif',
+                color: '#3D3520',
+                fontSize: '1rem',
+                lineHeight: 1.7,
+                marginBottom: '24px',
+              }}>
+                Esto es solo el inicio de tu camino.
+              </p>
+              
+                href="https://www.regalametuhistoria.com/?utm_source=quiz&utm_medium=resultado&utm_content=cta_video"
+                style={{
+                  display: 'inline-block',
+                  background: '#6B783E',
+                  color: '#FDFAF6',
+                  fontFamily: 'Inter, sans-serif',
+                  fontWeight: 700,
+                  fontSize: '0.9375rem',
+                  letterSpacing: '0.5px',
+                  padding: '16px 36px',
+                  borderRadius: '2px',
+                  textDecoration: 'none',
+                }}
+              >
+                Quiero continuar mi camino →
+              </a>
+              <p style={{
+                fontFamily: 'Inter, sans-serif',
+                fontSize: '0.8125rem',
+                color: '#8A7E6E',
+                marginTop: '12px',
+              }}>
+                Taller Del Infierno al Cielo en el Matrimonio
+              </p>
+            </div>
+
+          </div>
+        </div>
       </div>
 
-      <footer className="pb-8 text-center">
+      <footer className="pb-8 text-center mt-12">
         <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8125rem', color: '#BD886A' }}>
           © 2026 Regálame tu Historia · Ana y Alex
         </p>
       </footer>
+
     </main>
   )
 }
