@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { clasificar } from '@/lib/clasificador'
 import { registrarEnMailerLite } from '@/lib/mailerlite'
 import { registrarEnSheets } from '@/lib/sheets'
-import { enviarAlertaCrisis } from '@/lib/mailer'
+import { enviarAlertaCrisis, enviarConfirmacionUsuario } from '@/lib/mailer'
 import { RESULTADOS } from '@/lib/resultados-data'
 import { SubmitPayload } from '@/types/quiz'
 
@@ -34,8 +34,8 @@ export async function POST(req: NextRequest) {
       utmCampaign,
     }
 
-    // Fire-and-forget — responde inmediatamente, no espera a las APIs externas
     await Promise.allSettled([
+      enviarConfirmacionUsuario(payload),
       registrarEnMailerLite(payload),
       registrarEnSheets(payload),
       ...(payload.flagAlertaCrisis ? [enviarAlertaCrisis(payload)] : []),
