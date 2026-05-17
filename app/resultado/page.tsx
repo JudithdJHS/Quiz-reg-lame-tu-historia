@@ -277,7 +277,7 @@ export default function ResultadoPage() {
               }}>
                 Esto es solo el inicio de tu camino.
               </p>
-              
+              <a 
                 href="https://www.regalametuhistoria.com/?utm_source=quiz&utm_medium=resultado&utm_content=cta_video"
                 style={{
                   display: 'inline-block',
