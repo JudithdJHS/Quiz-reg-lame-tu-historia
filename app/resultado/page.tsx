@@ -186,7 +186,7 @@ export default function ResultadoPage() {
               marginBottom: '12px',
               textAlign: 'center',
             }}>
-              MASTERCLASS GRATUITA
+              Tu primer regalo · MASTERCLASS GRATUITA
             </p>
 
             <h2 style={{
