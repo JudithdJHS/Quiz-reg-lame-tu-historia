@@ -297,6 +297,62 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
         <RutaCamino pasos={resultado.pasosCamino} destino={resultado.destinoCamino} />
       </motion.div>
 
+      {/* ── MASTERCLASS GRATUITA ──────────────────────────────── */}
+      <motion.div
+        style={{
+          borderRadius: '12px',
+          padding: '28px 24px',
+          marginBottom: '12px',
+          backgroundColor: '#EDE3D5',
+          border: '1px solid rgba(196,158,80,0.25)',
+        }}
+        {...FADE_UP()}
+      >
+        <p style={{
+          fontFamily: 'Inter, sans-serif',
+          fontSize: '0.6875rem',
+          fontWeight: 700,
+          color: '#C49E50',
+          textTransform: 'uppercase',
+          letterSpacing: '0.15em',
+          marginBottom: '14px',
+        }}>
+          {resultado.masterclassGratuita.label}
+        </p>
+
+        <h3 style={{
+          fontFamily: 'Playfair Display, serif',
+          fontSize: 'clamp(1.125rem, 3vw, 1.375rem)',
+          fontWeight: 700,
+          color: '#3D3520',
+          lineHeight: '1.3',
+          letterSpacing: '-0.01em',
+          marginBottom: '10px',
+        }}>
+          {resultado.masterclassGratuita.titulo}
+        </h3>
+
+        <p style={{
+          fontFamily: 'Inter, sans-serif',
+          color: '#BD886A',
+          fontSize: '0.9375rem',
+          lineHeight: '1.65',
+          marginBottom: '16px',
+        }}>
+          {resultado.masterclassGratuita.subtitulo}
+        </p>
+
+        <p style={{
+          fontFamily: 'Inter, sans-serif',
+          fontStyle: 'italic',
+          color: 'rgba(189,136,106,0.65)',
+          fontSize: '0.8125rem',
+          letterSpacing: '0.02em',
+        }}>
+          {resultado.masterclassGratuita.caption}
+        </p>
+      </motion.div>
+
       {/* ── CTA — verde oliva, texto blanco ───────────────────── */}
       <motion.div
         style={{

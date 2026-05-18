@@ -27,6 +27,12 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
     ],
     destinoCamino: 'Un hogar donde tus hijos aprenden que el amor no se rinde',
 
+    masterclassGratuita: {
+      label: 'MASTERCLASS GRATUITA',
+      titulo: 'Masterclass gratuita — Por qué falla la comunicación en matrimonios católicos',
+      subtitulo: 'Descubre por qué la comunicación se rompe — y cómo restaurarla desde la fe.',
+      caption: 'La masterclass estará disponible muy pronto',
+    },
     primerPaso: 'Taller Grabado · Del infierno al cielo en el matrimonio',
     descripcionProducto: 'Puedes empezar sola, a tu ritmo, sin esperar que él diga sí. Las sesiones 2 y 3 del taller están diseñadas para el trabajo personal que no depende de tu pareja.',
     precio: '$32/mes',
@@ -62,6 +68,12 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
     ],
     destinoCamino: 'Un hogar donde volvieron a elegirse de verdad',
 
+    masterclassGratuita: {
+      label: 'MASTERCLASS GRATUITA',
+      titulo: 'Masterclass gratuita — Por qué falla la comunicación en matrimonios católicos',
+      subtitulo: 'Descubre por qué la comunicación se rompe — y cómo restaurarla desde la fe.',
+      caption: 'La masterclass estará disponible muy pronto',
+    },
     primerPaso: 'Taller en Vivo · Del infierno al cielo en el matrimonio',
     descripcionProducto: 'La distancia emocional necesita experiencia grupal, no solo contenido grabado. Ver que otras parejas viven lo mismo — y lo están revertiendo — es lo que rompe la resignación.',
     precio: 'Próxima cohorte — consultar fechas',
@@ -97,6 +109,12 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
     ],
     destinoCamino: 'Una vida donde el dolor tuvo un propósito',
 
+    masterclassGratuita: {
+      label: 'MASTERCLASS GRATUITA',
+      titulo: 'Masterclass gratuita — Por qué falla la comunicación en matrimonios católicos',
+      subtitulo: 'Descubre por qué la comunicación se rompe — y cómo restaurarla desde la fe.',
+      caption: 'La masterclass estará disponible muy pronto',
+    },
     primerPaso: 'Escríbenos directamente',
     descripcionProducto: 'Tu situación requiere acompañamiento real. Antes de recomendarte el camino más adecuado, queremos conocer tu situación. Escríbenos a regalametuhistoria@gmail.com — te respondemos personalmente.',
     precio: '',
@@ -131,6 +149,12 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
     ],
     destinoCamino: 'Un matrimonio que dura porque se cuidó a tiempo',
 
+    masterclassGratuita: {
+      label: 'MASTERCLASS GRATUITA',
+      titulo: 'Masterclass gratuita — Por qué falla la comunicación en matrimonios católicos',
+      subtitulo: 'Descubre por qué la comunicación se rompe — y cómo restaurarla desde la fe.',
+      caption: 'La masterclass estará disponible muy pronto',
+    },
     primerPaso: 'Taller Grabado · Del infierno al cielo en el matrimonio',
     descripcionProducto: 'El lugar perfecto para entender qué es el taller, qué pilares trabaja y si resuena con lo que tu matrimonio necesita — sin la presión de una cohorte en vivo.',
     precio: '$32/mes — exploración sin compromiso',
@@ -165,6 +189,12 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
     ],
     destinoCamino: 'Una familia que salió adelante porque alguien decidió empezar',
 
+    masterclassGratuita: {
+      label: 'MASTERCLASS GRATUITA',
+      titulo: 'Masterclass gratuita — Por qué falla la comunicación en matrimonios católicos',
+      subtitulo: 'Descubre por qué la comunicación se rompe — y cómo restaurarla desde la fe.',
+      caption: 'La masterclass estará disponible muy pronto',
+    },
     primerPaso: 'Taller Grabado · Del infierno al cielo en el matrimonio',
     descripcionProducto: 'Menos de lo que cuesta una consulta. Sin fecha fija. Sin compromiso de largo plazo. Y si aún así el dinero es un obstáculo real, escríbenos — hay caminos y formas.',
     precio: '$32/mes',
@@ -200,6 +230,12 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
     ],
     destinoCamino: 'Un matrimonio que empezó diferente porque elegiste prepararte',
 
+    masterclassGratuita: {
+      label: 'MASTERCLASS GRATUITA',
+      titulo: 'Masterclass gratuita — Por qué falla la comunicación en matrimonios católicos',
+      subtitulo: 'Descubre por qué la comunicación se rompe — y cómo restaurarla desde la fe.',
+      caption: 'La masterclass estará disponible muy pronto',
+    },
     primerPaso: 'Taller en Vivo · Del infierno al cielo en el matrimonio',
     descripcionProducto: 'El mismo taller, otra entrada. No restauración — preparación. La sesión 2 te permite ver las heridas que traes de tu familia de origen antes de heredárselas a la familia que estás por construir.',
     precio: 'Próxima cohorte — consultar fechas',
@@ -234,6 +270,12 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
     ],
     destinoCamino: 'Una vocación vivida con convicción, no con duda',
 
+    masterclassGratuita: {
+      label: 'MASTERCLASS GRATUITA',
+      titulo: 'Masterclass gratuita — Por qué falla la comunicación en matrimonios católicos',
+      subtitulo: 'Descubre por qué la comunicación se rompe — y cómo restaurarla desde la fe.',
+      caption: 'La masterclass estará disponible muy pronto',
+    },
     primerPaso: 'Taller Grabado · Del infierno al cielo en el matrimonio',
     descripcionProducto: 'Ver el matrimonio desde adentro — no como meta cultural, sino como vocación — te da elementos para entender si es tu camino o no. Sin presión. A tu ritmo.',
     precio: '$32/mes',
@@ -269,6 +311,12 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
     ],
     destinoCamino: 'Un matrimonio que llevó a otros al cielo',
 
+    masterclassGratuita: {
+      label: 'MASTERCLASS GRATUITA',
+      titulo: 'Masterclass gratuita — Por qué falla la comunicación en matrimonios católicos',
+      subtitulo: 'Descubre por qué la comunicación se rompe — y cómo restaurarla desde la fe.',
+      caption: 'La masterclass estará disponible muy pronto',
+    },
     primerPaso: 'Taller en Vivo · Del infierno al cielo en el matrimonio',
     descripcionProducto: 'La ruta más completa del ecosistema RTH. No como solución a un problema — como misión. Su matrimonio puede convertirse en testimonio que lleve a otros al cielo.',
     precio: 'Próxima cohorte — consultar fechas',

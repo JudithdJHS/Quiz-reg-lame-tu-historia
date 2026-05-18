@@ -35,6 +35,13 @@ export interface PasoCamino {
   descripcion?: string
 }
 
+export interface MasterclassGratuita {
+  label: string
+  titulo: string
+  subtitulo: string
+  caption: string
+}
+
 export interface ResultadoPerfil {
   nombre: string
   subtitulo: string
@@ -46,6 +53,7 @@ export interface ResultadoPerfil {
   visionFuturo: { noPrometemos: string; prometemos: string }
   pasosCamino: PasoCamino[]
   destinoCamino: string
+  masterclassGratuita: MasterclassGratuita
   primerPaso: string
   descripcionProducto: string
   precio: string
