@@ -301,7 +301,7 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
       <motion.div
         style={{
           borderRadius: '12px',
-          padding: '28px 24px',
+          padding: '48px 24px 28px',
           marginBottom: '12px',
           backgroundColor: '#EDE3D5',
           border: '1px solid rgba(196,158,80,0.25)',
@@ -316,18 +316,21 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
           textTransform: 'uppercase',
           letterSpacing: '0.15em',
           marginBottom: '14px',
+          textAlign: 'left',
         }}>
           {resultado.masterclassGratuita.label}
         </p>
 
         <h3 style={{
           fontFamily: 'Playfair Display, serif',
-          fontSize: 'clamp(1.125rem, 3vw, 1.375rem)',
+          fontStyle: 'italic',
+          fontSize: 'clamp(2rem, 5vw, 2.75rem)',
           fontWeight: 700,
           color: '#3D3520',
-          lineHeight: '1.3',
-          letterSpacing: '-0.01em',
-          marginBottom: '10px',
+          lineHeight: '1.1',
+          letterSpacing: '-0.02em',
+          marginBottom: '8px',
+          textAlign: 'left',
         }}>
           {resultado.masterclassGratuita.titulo}
         </h3>
