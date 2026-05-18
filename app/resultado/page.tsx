@@ -186,7 +186,7 @@ export default function ResultadoPage() {
               marginBottom: '12px',
               textAlign: 'center',
             }}>
-              Tu primer regalo
+              MASTERCLASS GRATUITA
             </p>
 
             <h2 style={{
@@ -197,7 +197,7 @@ export default function ResultadoPage() {
               marginBottom: '8px',
               lineHeight: 1.3,
             }}>
-              Sesión 2 — Reconociendo las heridas
+              Por qué falla la comunicación en matrimonios católicos
             </h2>
 
             <p style={{
@@ -208,8 +208,7 @@ export default function ResultadoPage() {
               marginBottom: '32px',
               lineHeight: 1.7,
             }}>
-              Este es el trabajo que no depende de tu pareja.<br />
-              Solo de ti.
+              Descubre por qué la comunicación se rompe — y cómo restaurarla desde la fe.
             </p>
 
             {/* Player */}
@@ -260,7 +259,7 @@ export default function ResultadoPage() {
                   color: '#8A7E6E',
                   fontSize: '1rem',
                 }}>
-                  El extracto estará disponible muy pronto
+                  La masterclass estará disponible muy pronto
                 </p>
               </div>
 
