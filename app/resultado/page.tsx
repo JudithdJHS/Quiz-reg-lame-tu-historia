@@ -184,18 +184,21 @@ export default function ResultadoPage() {
               textTransform: 'uppercase',
               color: '#6B783E',
               marginBottom: '12px',
-              textAlign: 'center',
+              textAlign: 'left',
             }}>
               Tu primer regalo · MASTERCLASS GRATUITA
             </p>
 
             <h2 style={{
               fontFamily: 'Playfair Display, serif',
-              fontSize: 'clamp(1.5rem, 4vw, 2rem)',
+              fontSize: 'clamp(2rem, 5vw, 2.75rem)',
+              fontWeight: 700,
+              fontStyle: 'italic',
               color: '#3D3520',
-              textAlign: 'center',
+              lineHeight: '1.1',
+              letterSpacing: '-0.02em',
               marginBottom: '8px',
-              lineHeight: 1.3,
+              textAlign: 'left',
             }}>
               Por qué falla la comunicación en matrimonios católicos
             </h2>
