@@ -297,65 +297,6 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
         <RutaCamino pasos={resultado.pasosCamino} destino={resultado.destinoCamino} />
       </motion.div>
 
-      {/* ── MASTERCLASS GRATUITA ──────────────────────────────── */}
-      <motion.div
-        style={{
-          borderRadius: '12px',
-          padding: '48px 24px 28px',
-          marginBottom: '12px',
-          backgroundColor: '#EDE3D5',
-          border: '1px solid rgba(196,158,80,0.25)',
-        }}
-        {...FADE_UP()}
-      >
-        <p style={{
-          fontFamily: 'Inter, sans-serif',
-          fontSize: '0.6875rem',
-          fontWeight: 700,
-          color: '#C49E50',
-          textTransform: 'uppercase',
-          letterSpacing: '0.15em',
-          marginBottom: '14px',
-          textAlign: 'left',
-        }}>
-          {resultado.masterclassGratuita.label}
-        </p>
-
-        <h3 style={{
-          fontFamily: 'Playfair Display, serif',
-          fontStyle: 'italic',
-          fontSize: 'clamp(2rem, 5vw, 2.75rem)',
-          fontWeight: 700,
-          color: '#3D3520',
-          lineHeight: '1.1',
-          letterSpacing: '-0.02em',
-          marginBottom: '8px',
-          textAlign: 'left',
-        }}>
-          {resultado.masterclassGratuita.titulo}
-        </h3>
-
-        <p style={{
-          fontFamily: 'Inter, sans-serif',
-          color: '#BD886A',
-          fontSize: '0.9375rem',
-          lineHeight: '1.65',
-          marginBottom: '16px',
-        }}>
-          {resultado.masterclassGratuita.subtitulo}
-        </p>
-
-        <p style={{
-          fontFamily: 'Inter, sans-serif',
-          fontStyle: 'italic',
-          color: 'rgba(189,136,106,0.65)',
-          fontSize: '0.8125rem',
-          letterSpacing: '0.02em',
-        }}>
-          {resultado.masterclassGratuita.caption}
-        </p>
-      </motion.div>
-
       {/* ── CTA — verde oliva, texto blanco ───────────────────── */}
       <motion.div
         style={{
