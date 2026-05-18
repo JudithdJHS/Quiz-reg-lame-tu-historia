@@ -23,7 +23,7 @@ function HeroFoto() {
     >
       {!imgError && (
         <img
-          src="/Ana y Alex.jpg"
+          src="/ana-y-alex.jpg"
           alt="Ana y Alex — Regálame tu Historia"
           style={{
             position: 'absolute',

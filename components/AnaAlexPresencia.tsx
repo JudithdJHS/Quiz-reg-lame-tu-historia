@@ -11,7 +11,7 @@ export default function AnaAlexPresencia({ persona, grande = false }: AnaAlexPre
   const [imgError, setImgError] = useState(false)
 
   const nombre = persona === 'ana' ? 'Ana' : 'Alex'
-  const src = '/Ana y Alex 2.jpg'
+  const src = '/ana-y-alex-2.jpg'
   const objectPosition = '62% 20%'
   const size = grande ? 'w-40 h-40 md:w-56 md:h-56' : 'w-9 h-9 md:w-16 md:h-16'
 
