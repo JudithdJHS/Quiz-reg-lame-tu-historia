@@ -13,11 +13,10 @@ export default function QuizProgress({ current, total }: QuizProgressProps) {
       <div className="flex items-end justify-between mb-2">
         <span style={{
           fontFamily: 'Poppins, sans-serif',
-          fontSize: '0.875rem',
+          fontSize: '13px',
           fontWeight: 600,
-          color: '#6B783E',
-          letterSpacing: '0.08em',
-          textTransform: 'uppercase' as const,
+          color: '#8A7E6E',
+          letterSpacing: '1px',
         }}>
           Pregunta {current} de {total}
         </span>
@@ -38,16 +37,16 @@ export default function QuizProgress({ current, total }: QuizProgressProps) {
       {/* Barra 8px */}
       <div style={{
         width: '100%',
-        height: '8px',
-        backgroundColor: 'rgba(196,158,80,0.12)',
-        borderRadius: '4px',
+        height: '6px',
+        backgroundColor: '#E0D5C4',
+        borderRadius: '3px',
         overflow: 'hidden',
       }}>
         <div style={{
           height: '100%',
           width: `${pct}%`,
-          backgroundColor: '#C49E50',
-          borderRadius: '4px',
+          backgroundColor: '#6B783E',
+          borderRadius: '3px',
           transition: 'width 500ms cubic-bezier(0.16, 1, 0.3, 1)',
         }} />
       </div>

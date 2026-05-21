@@ -1118,4 +1118,9 @@ El dorado (#C49E50) aparece en los momentos de revelación y esperanza — nunca
 - ❌ La lista numerada plana sin diseño visual
 - ❌ El avatar "A&A" en círculo — reemplazar por foto real o foto placeholder cálida
 - ❌ Cualquier sensación de catálogo o carrito de compra
-
+Piensa antes de actuar. Lee los archivos antes de escribir código.
+Edita solo lo que cambia, no reescribas archivos enteros.
+No releas archivos que ya hayas leído salvo que hayan cambiado.
+No repitas código sin cambios en tus respuestas.
+Sin preámbulos, sin resúmenes al final, sin explicar lo obvio.
+Testea antes de dar por terminado.

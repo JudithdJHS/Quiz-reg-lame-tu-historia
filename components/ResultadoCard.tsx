@@ -78,26 +78,28 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
       {/* ── EL PATRÓN ──────────────────────────────────────────── */}
       <motion.div style={{ marginBottom: '44px' }} {...FADE_UP(0.08)}>
 
-        {/* Label premium — Inter 11px, tracking 0.15em */}
         <p style={{
           fontFamily: 'Poppins, sans-serif',
-          fontSize: '0.6875rem',
-          fontWeight: 600,
+          fontSize: '10px',
+          fontWeight: 700,
           color: '#C49E50',
           textTransform: 'uppercase',
-          letterSpacing: '0.15em',
-          marginBottom: '14px',
+          letterSpacing: '4px',
+          marginBottom: '16px',
         }}>
           Tu patrón
         </p>
 
-        {/* Título monumental — regular + italic gold */}
+        {/* Separador dorado */}
+        <div style={{ width: '50px', height: '2px', backgroundColor: '#C49E50', marginBottom: '16px' }} />
+
+        {/* Título monumental — fontWeight 400 (el tamaño da el peso) */}
         <h1 style={{
           fontFamily: 'Playfair Display, serif',
-          fontSize: 'clamp(2rem, 7vw, 3.5rem)',
-          fontWeight: 700,
+          fontSize: 'clamp(2rem, 7vw, 3.25rem)',
+          fontWeight: 400,
           color: '#3D3520',
-          lineHeight: '1.1',
+          lineHeight: '1.15',
           letterSpacing: '-0.02em',
           marginBottom: '10px',
         }}>
@@ -105,74 +107,49 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
           <em style={{ fontStyle: 'italic', color: '#C49E50' }}>{tituloItalic}</em>
         </h1>
 
-        {/* Subtítulo — Inter Light 16px */}
+        {/* Subtítulo — 15px 400 gris */}
         <p style={{
           fontFamily: 'Poppins, sans-serif',
-          fontWeight: 300,
-          color: '#BD886A',
-          fontSize: '1rem',
-          letterSpacing: '0.03em',
+          fontWeight: 400,
+          color: '#8A7E6E',
+          fontSize: '15px',
+          lineHeight: '1.7',
           marginBottom: '24px',
         }}>
           {resultado.subtitulo}
         </p>
 
-        {/* Situación con borde izquierdo */}
-        <div style={{
-          borderLeft: '3px solid #C49E50',
-          paddingLeft: '20px',
+        {/* Situación — párrafo de cuerpo, 16px 400 */}
+        <p style={{
+          fontFamily: 'Poppins, sans-serif',
+          fontWeight: 400,
+          color: '#3D3520',
+          fontSize: '16px',
+          lineHeight: '1.75',
         }}>
-          <p style={{
-            fontFamily: 'Poppins, sans-serif',
-            color: '#3D3520',
-            fontSize: 'clamp(1rem, 2.5vw, 1.125rem)',
-            lineHeight: '1.75',
-          }}>
-            {resultado.situacion}
-          </p>
-        </div>
+          {resultado.situacion}
+        </p>
       </motion.div>
 
-      {/* ── TESTIMONIO — fondo #EDE3D5, sin borde ─────────────── */}
+      {/* ── TESTIMONIO ─────────────────────────────────────────── */}
       <motion.div
         style={{
-          backgroundColor: '#EDE3D5',
+          backgroundColor: '#FDFAF6',
           borderRadius: '12px',
-          padding: '32px 28px 28px',
+          padding: '24px 28px',
           marginBottom: '44px',
-          position: 'relative',
-          overflow: 'hidden',
+          border: '1px solid #E0D5C4',
         }}
         {...FADE_UP()}
       >
-        {/* Comilla decorativa flotante — 80px, dorado muy transparente */}
-        <div
-          aria-hidden
-          style={{
-            position: 'absolute',
-            top: '-10px',
-            left: '20px',
-            fontFamily: 'Playfair Display, serif',
-            fontSize: '80px',
-            color: '#C49E50',
-            opacity: 0.18,
-            lineHeight: 1,
-            userSelect: 'none',
-            pointerEvents: 'none',
-          }}
-        >
-          "
-        </div>
-
         <p style={{
           fontFamily: 'Poppins, sans-serif',
-          fontSize: '0.6875rem',
-          fontWeight: 600,
-          color: '#BD886A',
+          fontSize: '10px',
+          fontWeight: 700,
+          color: '#C49E50',
           textTransform: 'uppercase',
-          letterSpacing: '0.1em',
-          marginBottom: '14px',
-          position: 'relative',
+          letterSpacing: '3px',
+          marginBottom: '12px',
         }}>
           — Alguien que llegó exactamente donde estás tú
         </p>
@@ -181,49 +158,40 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
           fontFamily: 'Playfair Display, serif',
           fontStyle: 'italic',
           color: '#3D3520',
-          fontSize: 'clamp(1.0625rem, 2.5vw, 1.25rem)',
+          fontSize: '17px',
           lineHeight: '1.7',
-          letterSpacing: '-0.01em',
-          position: 'relative',
+          fontWeight: 400,
         }}>
           {resultado.testimonio}
         </p>
       </motion.div>
 
-      {/* ── MENSAJE CONTUNDENTE — líneas doradas arriba y abajo ── */}
-      <motion.div
-        style={{
-          textAlign: 'center',
-          marginBottom: '44px',
-          padding: '0 8px',
-        }}
-        {...FADE_UP()}
-      >
-        {/* Línea dorada superior */}
-        <div style={{ height: '1px', backgroundColor: 'rgba(196,158,80,0.4)', marginBottom: '24px' }} />
-
+      {/* ── MENSAJE CONTUNDENTE — cita emocional con borde dorado ── */}
+      <motion.div style={{ marginBottom: '44px' }} {...FADE_UP()}>
         <p style={{
           fontFamily: 'Playfair Display, serif',
           fontStyle: 'italic',
           color: '#3D3520',
-          fontSize: 'clamp(1.125rem, 3vw, 1.375rem)',
-          lineHeight: '1.65',
-          letterSpacing: '-0.01em',
+          fontSize: '20px',
+          fontWeight: 400,
+          lineHeight: '1.6',
+          padding: '24px 32px',
+          borderLeft: '3px solid #C49E50',
+          background: 'rgba(196,158,80,0.08)',
+          borderRadius: '0 8px 8px 0',
         }}>
           {resultado.mensaje}
         </p>
-
-        {/* Línea dorada inferior */}
-        <div style={{ height: '1px', backgroundColor: 'rgba(196,158,80,0.4)', marginTop: '24px' }} />
       </motion.div>
 
       {/* ── COSTO DE LA INACCIÓN + VISIÓN ─────────────────────── */}
       <motion.div style={{ marginBottom: '44px' }} {...FADE_UP()}>
         <p style={{
           fontFamily: 'Poppins, sans-serif',
+          fontWeight: 400,
           color: '#BD886A',
-          fontSize: '0.9375rem',
-          lineHeight: '1.85',
+          fontSize: '16px',
+          lineHeight: '1.7',
           marginBottom: '28px',
         }}>
           {resultado.costoInaccion}
@@ -235,21 +203,22 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
           <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
             <span style={{
               fontFamily: 'Poppins, sans-serif',
-              fontSize: '0.6875rem',
+              fontSize: '10px',
               fontWeight: 700,
-              color: '#BD886A',
+              color: '#C49E50',
               textTransform: 'uppercase',
-              letterSpacing: '0.08em',
+              letterSpacing: '3px',
               flexShrink: 0,
-              paddingTop: '3px',
-              minWidth: '92px',
+              paddingTop: '4px',
+              minWidth: '96px',
             }}>
               No prometemos
             </span>
             <p style={{
               fontFamily: 'Poppins, sans-serif',
+              fontWeight: 400,
               color: '#3D3520',
-              fontSize: '0.9375rem',
+              fontSize: '16px',
               lineHeight: '1.65',
               margin: 0,
             }}>
@@ -260,21 +229,22 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
           <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
             <span style={{
               fontFamily: 'Poppins, sans-serif',
-              fontSize: '0.6875rem',
+              fontSize: '10px',
               fontWeight: 700,
-              color: '#6B783E',
+              color: '#C49E50',
               textTransform: 'uppercase',
-              letterSpacing: '0.08em',
+              letterSpacing: '3px',
               flexShrink: 0,
-              paddingTop: '3px',
-              minWidth: '92px',
+              paddingTop: '4px',
+              minWidth: '96px',
             }}>
               Prometemos
             </span>
             <p style={{
-              fontFamily: 'Playfair Display, serif',
+              fontFamily: 'Poppins, sans-serif',
+              fontWeight: 400,
               color: '#3D3520',
-              fontSize: '0.9375rem',
+              fontSize: '16px',
               lineHeight: '1.65',
               margin: 0,
             }}>
@@ -310,32 +280,32 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
       >
         <p style={{
           fontFamily: 'Poppins, sans-serif',
-          fontSize: '0.6875rem',
+          fontSize: '9px',
           fontWeight: 700,
-          color: 'rgba(253,250,246,0.5)',
+          color: 'rgba(253,250,246,0.55)',
           textTransform: 'uppercase',
-          letterSpacing: '0.15em',
+          letterSpacing: '3px',
           marginBottom: '16px',
         }}>
-          ¿Por dónde empezar?
+          Tu primer paso
         </p>
-
-        <h3 style={{
-          fontFamily: 'Playfair Display, serif',
-          fontSize: 'clamp(1.25rem, 3.5vw, 1.625rem)',
-          fontWeight: 700,
-          color: '#FDFAF6',
-          lineHeight: '1.25',
-          letterSpacing: '-0.01em',
-          marginBottom: '12px',
-        }}>
-          {resultado.primerPaso}
-        </h3>
 
         <p style={{
           fontFamily: 'Poppins, sans-serif',
+          fontSize: '16px',
+          fontWeight: 600,
+          color: '#FDFAF6',
+          lineHeight: '1.4',
+          marginBottom: '12px',
+        }}>
+          {resultado.primerPaso}
+        </p>
+
+        <p style={{
+          fontFamily: 'Poppins, sans-serif',
+          fontWeight: 400,
           color: 'rgba(253,250,246,0.7)',
-          fontSize: '0.9375rem',
+          fontSize: '15px',
           lineHeight: '1.65',
           marginBottom: '28px',
         }}>
@@ -346,15 +316,18 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
           href={urlProducto}
           target={urlProducto.startsWith('mailto') ? undefined : '_blank'}
           rel="noopener noreferrer"
-          className="block w-full text-center font-semibold transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
+          className="block w-full text-center transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
           style={{
             fontFamily: 'Poppins, sans-serif',
-            fontSize: '1rem',
+            fontSize: '18px',
+            fontWeight: 700,
+            letterSpacing: '0.5px',
             backgroundColor: '#FDFAF6',
             color: '#3D3520',
-            padding: '17px 24px',
+            padding: '18px 40px',
             borderRadius: '8px',
-            letterSpacing: '0.01em',
+            textDecoration: 'none',
+            display: 'block',
           }}
         >
           {resultado.ctaTexto}
