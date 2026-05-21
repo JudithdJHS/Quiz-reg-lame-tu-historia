@@ -49,7 +49,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
       >
         {nombre && (
           <p style={{
-            fontFamily: 'Poppins, sans-serif',
+            fontFamily: 'var(--font-poppins), sans-serif',
             color: '#BD886A',
             fontSize: '0.9375rem',
             letterSpacing: '0.04em',
@@ -59,7 +59,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
           </p>
         )}
         <p style={{
-          fontFamily: 'Playfair Display, serif',
+          fontFamily: 'var(--font-playfair), serif',
           fontStyle: 'italic',
           color: '#C49E50',
           fontSize: 'clamp(1rem, 3vw, 1.25rem)',
@@ -79,7 +79,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
       <motion.div style={{ marginBottom: '44px' }} {...FADE_UP(0.08)}>
 
         <p style={{
-          fontFamily: 'Poppins, sans-serif',
+          fontFamily: 'var(--font-poppins), sans-serif',
           fontSize: '10px',
           fontWeight: 700,
           color: '#C49E50',
@@ -95,7 +95,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
 
         {/* Título monumental — fontWeight 400 (el tamaño da el peso) */}
         <h1 style={{
-          fontFamily: 'Playfair Display, serif',
+          fontFamily: 'var(--font-playfair), serif',
           fontSize: 'clamp(2rem, 7vw, 3.25rem)',
           fontWeight: 400,
           color: '#3D3520',
@@ -109,7 +109,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
 
         {/* Subtítulo — 15px 400 gris */}
         <p style={{
-          fontFamily: 'Poppins, sans-serif',
+          fontFamily: 'var(--font-poppins), sans-serif',
           fontWeight: 400,
           color: '#8A7E6E',
           fontSize: '15px',
@@ -121,7 +121,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
 
         {/* Situación — párrafo de cuerpo, 16px 400 */}
         <p style={{
-          fontFamily: 'Poppins, sans-serif',
+          fontFamily: 'var(--font-poppins), sans-serif',
           fontWeight: 400,
           color: '#3D3520',
           fontSize: '16px',
@@ -143,7 +143,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
         {...FADE_UP()}
       >
         <p style={{
-          fontFamily: 'Poppins, sans-serif',
+          fontFamily: 'var(--font-poppins), sans-serif',
           fontSize: '10px',
           fontWeight: 700,
           color: '#C49E50',
@@ -155,7 +155,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
         </p>
 
         <p style={{
-          fontFamily: 'Playfair Display, serif',
+          fontFamily: 'var(--font-playfair), serif',
           fontStyle: 'italic',
           color: '#3D3520',
           fontSize: '17px',
@@ -169,7 +169,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
       {/* ── MENSAJE CONTUNDENTE — cita emocional con borde dorado ── */}
       <motion.div style={{ marginBottom: '44px' }} {...FADE_UP()}>
         <p style={{
-          fontFamily: 'Playfair Display, serif',
+          fontFamily: 'var(--font-playfair), serif',
           fontStyle: 'italic',
           color: '#3D3520',
           fontSize: '20px',
@@ -187,7 +187,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
       {/* ── COSTO DE LA INACCIÓN + VISIÓN ─────────────────────── */}
       <motion.div style={{ marginBottom: '44px' }} {...FADE_UP()}>
         <p style={{
-          fontFamily: 'Poppins, sans-serif',
+          fontFamily: 'var(--font-poppins), sans-serif',
           fontWeight: 400,
           color: '#BD886A',
           fontSize: '16px',
@@ -202,7 +202,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
             <span style={{
-              fontFamily: 'Poppins, sans-serif',
+              fontFamily: 'var(--font-poppins), sans-serif',
               fontSize: '10px',
               fontWeight: 700,
               color: '#C49E50',
@@ -215,7 +215,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
               No prometemos
             </span>
             <p style={{
-              fontFamily: 'Poppins, sans-serif',
+              fontFamily: 'var(--font-poppins), sans-serif',
               fontWeight: 400,
               color: '#3D3520',
               fontSize: '16px',
@@ -228,7 +228,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
 
           <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
             <span style={{
-              fontFamily: 'Poppins, sans-serif',
+              fontFamily: 'var(--font-poppins), sans-serif',
               fontSize: '10px',
               fontWeight: 700,
               color: '#C49E50',
@@ -241,7 +241,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
               Prometemos
             </span>
             <p style={{
-              fontFamily: 'Poppins, sans-serif',
+              fontFamily: 'var(--font-poppins), sans-serif',
               fontWeight: 400,
               color: '#3D3520',
               fontSize: '16px',
@@ -279,7 +279,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
         {...FADE_UP()}
       >
         <p style={{
-          fontFamily: 'Poppins, sans-serif',
+          fontFamily: 'var(--font-poppins), sans-serif',
           fontSize: '9px',
           fontWeight: 700,
           color: 'rgba(253,250,246,0.55)',
@@ -291,7 +291,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
         </p>
 
         <p style={{
-          fontFamily: 'Poppins, sans-serif',
+          fontFamily: 'var(--font-poppins), sans-serif',
           fontSize: '16px',
           fontWeight: 600,
           color: '#FDFAF6',
@@ -302,7 +302,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
         </p>
 
         <p style={{
-          fontFamily: 'Poppins, sans-serif',
+          fontFamily: 'var(--font-poppins), sans-serif',
           fontWeight: 400,
           color: 'rgba(253,250,246,0.7)',
           fontSize: '15px',
@@ -318,7 +318,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
           rel="noopener noreferrer"
           className="block w-full text-center transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
           style={{
-            fontFamily: 'Poppins, sans-serif',
+            fontFamily: 'var(--font-poppins), sans-serif',
             fontSize: '18px',
             fontWeight: 700,
             letterSpacing: '0.5px',
@@ -335,7 +335,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
 
         {resultado.precio && (
           <p className="text-center" style={{
-            fontFamily: 'Poppins, sans-serif',
+            fontFamily: 'var(--font-poppins), sans-serif',
             color: 'rgba(253,250,246,0.45)',
             fontSize: '0.8125rem',
             marginTop: '10px',
@@ -359,7 +359,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
           {...FADE_UP()}
         >
           <p style={{
-            fontFamily: 'Poppins, sans-serif',
+            fontFamily: 'var(--font-poppins), sans-serif',
             fontSize: '0.6875rem',
             fontWeight: 700,
             color: '#C49E50',
@@ -379,7 +379,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
                 border: '1px solid rgba(196,158,80,0.2)',
               }}>
                 <p style={{
-                  fontFamily: 'Playfair Display, serif',
+                  fontFamily: 'var(--font-playfair), serif',
                   fontStyle: 'italic',
                   fontSize: '1.0625rem',
                   fontWeight: 700,
@@ -389,7 +389,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
                   {r.nombre}
                 </p>
                 <p style={{
-                  fontFamily: 'Poppins, sans-serif',
+                  fontFamily: 'var(--font-poppins), sans-serif',
                   fontSize: '0.875rem',
                   color: '#BD886A',
                   lineHeight: '1.6',
@@ -398,7 +398,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
                   {r.descripcion}
                 </p>
                 <p style={{
-                  fontFamily: 'Poppins, sans-serif',
+                  fontFamily: 'var(--font-poppins), sans-serif',
                   fontSize: '0.8125rem',
                   color: '#6B783E',
                   fontWeight: 600,
@@ -411,7 +411,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    fontFamily: 'Poppins, sans-serif',
+                    fontFamily: 'var(--font-poppins), sans-serif',
                     fontSize: '0.875rem',
                     color: '#6B783E',
                     fontWeight: 600,
@@ -440,7 +440,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
           {...FADE_UP()}
         >
           <p style={{
-            fontFamily: 'Poppins, sans-serif',
+            fontFamily: 'var(--font-poppins), sans-serif',
             fontSize: '0.6875rem',
             fontWeight: 700,
             color: '#C49E50',
@@ -451,7 +451,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
             Entrada inmediata
           </p>
           <p style={{
-            fontFamily: 'Poppins, sans-serif',
+            fontFamily: 'var(--font-poppins), sans-serif',
             color: '#3D3520',
             fontSize: '0.9375rem',
             lineHeight: '1.75',
@@ -460,7 +460,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
             Mientras esperas la próxima cohorte del taller, tenemos un espacio creado exactamente para lo que estás viviendo:
           </p>
           <p style={{
-            fontFamily: 'Playfair Display, serif',
+            fontFamily: 'var(--font-playfair), serif',
             fontStyle: 'italic',
             fontSize: '1.125rem',
             fontWeight: 700,
@@ -470,7 +470,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
             Taller "Infidelidad: sanar y reconstruir"
           </p>
           <p style={{
-            fontFamily: 'Poppins, sans-serif',
+            fontFamily: 'var(--font-poppins), sans-serif',
             fontSize: '0.875rem',
             color: '#BD886A',
             lineHeight: '1.6',
@@ -479,7 +479,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
             Un proceso corto y muy estructurado, con workbook descargable. No reemplaza el taller en vivo — lo prepara.
           </p>
           <p style={{
-            fontFamily: 'Poppins, sans-serif',
+            fontFamily: 'var(--font-poppins), sans-serif',
             fontSize: '0.8125rem',
             color: '#6B783E',
             fontWeight: 600,
@@ -493,7 +493,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
             rel="noopener noreferrer"
             className="block w-full text-center font-semibold transition-all duration-200 hover:opacity-90"
             style={{
-              fontFamily: 'Poppins, sans-serif',
+              fontFamily: 'var(--font-poppins), sans-serif',
               fontSize: '1rem',
               backgroundColor: '#6B783E',
               color: '#FDFAF6',
@@ -518,7 +518,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
           {...FADE_UP()}
         >
           <p style={{
-            fontFamily: 'Poppins, sans-serif',
+            fontFamily: 'var(--font-poppins), sans-serif',
             fontSize: '0.6875rem',
             fontWeight: 700,
             color: '#C49E50',
@@ -529,7 +529,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
             Entrada inmediata
           </p>
           <p style={{
-            fontFamily: 'Poppins, sans-serif',
+            fontFamily: 'var(--font-poppins), sans-serif',
             color: '#3D3520',
             fontSize: '0.9375rem',
             lineHeight: '1.75',
@@ -538,7 +538,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
             Hay un taller creado para este dolor específico. Es el lugar más honesto donde hemos podido hablar de esto.
           </p>
           <p style={{
-            fontFamily: 'Playfair Display, serif',
+            fontFamily: 'var(--font-playfair), serif',
             fontStyle: 'italic',
             fontSize: '1.125rem',
             fontWeight: 700,
@@ -548,7 +548,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
             Taller "Pornografía en el matrimonio"
           </p>
           <p style={{
-            fontFamily: 'Poppins, sans-serif',
+            fontFamily: 'var(--font-poppins), sans-serif',
             fontSize: '0.8125rem',
             color: '#6B783E',
             fontWeight: 600,
@@ -562,7 +562,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
             rel="noopener noreferrer"
             className="block w-full text-center font-semibold transition-all duration-200 hover:opacity-90"
             style={{
-              fontFamily: 'Poppins, sans-serif',
+              fontFamily: 'var(--font-poppins), sans-serif',
               fontSize: '1rem',
               backgroundColor: '#6B783E',
               color: '#FDFAF6',

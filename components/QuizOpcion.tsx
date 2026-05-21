@@ -18,7 +18,7 @@ export default function QuizOpcion({ texto, numero, seleccionada, onSelect }: Qu
       whileTap={{ scale: 0.99 }}
       className="w-full text-left focus:outline-none"
       style={{
-        fontFamily: 'Poppins, sans-serif',
+        fontFamily: 'var(--font-poppins), sans-serif',
         fontWeight: 400,
         fontSize: 'clamp(1rem, 2.5vw, 1.125rem)',
         lineHeight: '1.55',
@@ -56,7 +56,7 @@ export default function QuizOpcion({ texto, numero, seleccionada, onSelect }: Qu
     >
       {/* Número 01, 02, 03... */}
       <span style={{
-        fontFamily: 'Poppins, sans-serif',
+        fontFamily: 'var(--font-poppins), sans-serif',
         fontSize: '0.75rem',
         fontWeight: 600,
         color: seleccionada ? '#C49E50' : 'rgba(196,158,80,0.55)',

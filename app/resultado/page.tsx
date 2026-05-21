@@ -59,7 +59,7 @@ function HeroFoto() {
       >
         <p
           style={{
-            fontFamily: 'Playfair Display, serif',
+            fontFamily: 'var(--font-playfair), serif',
             fontStyle: 'italic',
             fontWeight: 600,
             color: imgError ? '#C49E50' : '#FDFAF6',
@@ -73,7 +73,7 @@ function HeroFoto() {
         </p>
         <p
           style={{
-            fontFamily: 'Playfair Display, serif',
+            fontFamily: 'var(--font-playfair), serif',
             fontStyle: 'italic',
             color: imgError ? '#BD886A' : 'rgba(253,250,246,0.85)',
             fontSize: 'clamp(0.8125rem, 2vw, 1rem)',
@@ -138,7 +138,7 @@ export default function ResultadoPage() {
             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
           </svg>
-          <p style={{ fontFamily: 'Poppins, sans-serif', color: '#BD886A' }}>Cargando tu resultado…</p>
+          <p style={{ fontFamily: 'var(--font-poppins), sans-serif', color: '#BD886A' }}>Cargando tu resultado…</p>
         </div>
       </div>
     )
@@ -179,7 +179,7 @@ export default function ResultadoPage() {
           <div style={{ borderTop: '1px solid #E0D5C4', paddingTop: '48px' }}>
 
             <p style={{
-              fontFamily: 'Poppins, sans-serif',
+              fontFamily: 'var(--font-poppins), sans-serif',
               fontSize: '0.75rem',
               fontWeight: 700,
               letterSpacing: '2px',
@@ -192,7 +192,7 @@ export default function ResultadoPage() {
             </p>
 
             <h2 style={{
-              fontFamily: 'Playfair Display, serif',
+              fontFamily: 'var(--font-playfair), serif',
               fontSize: 'clamp(2rem, 5vw, 2.75rem)',
               fontWeight: 700,
               fontStyle: 'italic',
@@ -206,7 +206,7 @@ export default function ResultadoPage() {
             </h2>
 
             <p style={{
-              fontFamily: 'Poppins, sans-serif',
+              fontFamily: 'var(--font-poppins), sans-serif',
               fontSize: '1rem',
               color: '#8A7E6E',
               textAlign: 'center',
@@ -259,7 +259,7 @@ export default function ResultadoPage() {
                   </svg>
                 </div>
                 <p style={{
-                  fontFamily: 'Playfair Display, serif',
+                  fontFamily: 'var(--font-playfair), serif',
                   fontStyle: 'italic',
                   color: '#8A7E6E',
                   fontSize: '1rem',
@@ -273,7 +273,7 @@ export default function ResultadoPage() {
             {/* CTA después del video */}
             <div style={{ textAlign: 'center', marginTop: '40px' }}>
               <p style={{
-                fontFamily: 'Poppins, sans-serif',
+                fontFamily: 'var(--font-poppins), sans-serif',
                 color: '#3D3520',
                 fontSize: '1rem',
                 lineHeight: 1.7,
@@ -287,7 +287,7 @@ export default function ResultadoPage() {
                   display: 'inline-block',
                   background: '#6B783E',
                   color: '#FDFAF6',
-                  fontFamily: 'Poppins, sans-serif',
+                  fontFamily: 'var(--font-poppins), sans-serif',
                   fontWeight: 700,
                   fontSize: '0.9375rem',
                   letterSpacing: '0.5px',
@@ -299,7 +299,7 @@ export default function ResultadoPage() {
                 Quiero continuar mi camino →
               </a>
               <p style={{
-                fontFamily: 'Poppins, sans-serif',
+                fontFamily: 'var(--font-poppins), sans-serif',
                 fontSize: '0.8125rem',
                 color: '#8A7E6E',
                 marginTop: '12px',
@@ -313,7 +313,7 @@ export default function ResultadoPage() {
       </div>
 
       <footer className="pb-8 text-center mt-12">
-        <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.8125rem', color: '#BD886A' }}>
+        <p style={{ fontFamily: 'var(--font-poppins), sans-serif', fontSize: '0.8125rem', color: '#BD886A' }}>
           © 2026 Regálame tu Historia · Ana y Alex
         </p>
       </footer>

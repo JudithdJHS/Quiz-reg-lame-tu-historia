@@ -26,6 +26,8 @@
 body {
   background-color: var(--crema);
   color: var(--oscuro);
+  font-family: var(--font-poppins), sans-serif;
+  font-weight: 400;
 }
 
 ::selection {

@@ -13,7 +13,7 @@ export default function RutaCamino({ pasos, destino }: RutaCaminoProps) {
     <div>
       {/* Label eyebrow */}
       <p style={{
-        fontFamily: 'Poppins, sans-serif',
+        fontFamily: 'var(--font-poppins), sans-serif',
         fontSize: '10px',
         fontWeight: 700,
         color: '#C49E50',
@@ -67,7 +67,7 @@ export default function RutaCamino({ pasos, destino }: RutaCaminoProps) {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontFamily: 'Poppins, sans-serif',
+                  fontFamily: 'var(--font-poppins), sans-serif',
                   fontSize: '14px',
                   fontWeight: 800,
                   backgroundColor: esActivo ? '#C49E50' : 'rgba(196,158,80,0.12)',
@@ -80,7 +80,7 @@ export default function RutaCamino({ pasos, destino }: RutaCaminoProps) {
                 <div style={{ flex: 1, paddingTop: '4px' }}>
                   {esActivo && (
                     <p style={{
-                      fontFamily: 'Poppins, sans-serif',
+                      fontFamily: 'var(--font-poppins), sans-serif',
                       fontSize: '10px',
                       fontWeight: 700,
                       color: 'rgba(253,250,246,0.65)',
@@ -92,7 +92,7 @@ export default function RutaCamino({ pasos, destino }: RutaCaminoProps) {
                     </p>
                   )}
                   <p style={{
-                    fontFamily: 'Poppins, sans-serif',
+                    fontFamily: 'var(--font-poppins), sans-serif',
                     fontSize: '16px',
                     fontWeight: 700,
                     color: esActivo ? '#FDFAF6' : '#3D3520',
@@ -104,7 +104,7 @@ export default function RutaCamino({ pasos, destino }: RutaCaminoProps) {
                   </p>
                   {paso.descripcion && (
                     <p style={{
-                      fontFamily: 'Poppins, sans-serif',
+                      fontFamily: 'var(--font-poppins), sans-serif',
                       fontSize: '15px',
                       fontWeight: 400,
                       color: esActivo ? 'rgba(253,250,246,0.7)' : '#BD886A',
@@ -142,7 +142,7 @@ export default function RutaCamino({ pasos, destino }: RutaCaminoProps) {
               opacity: 0.6,
             }} />
             <p style={{
-              fontFamily: 'Playfair Display, serif',
+              fontFamily: 'var(--font-playfair), serif',
               fontStyle: 'italic',
               fontSize: '17px',
               color: '#C49E50',

@@ -47,7 +47,7 @@ export default function AnaAlexPresencia({ persona, grande = false }: AnaAlexPre
           >
             <span
               style={{
-                fontFamily: 'Playfair Display, serif',
+                fontFamily: 'var(--font-playfair), serif',
                 color: '#C49E50',
                 fontSize: grande ? '1.375rem' : '0.8125rem',
                 fontStyle: 'italic',
@@ -60,7 +60,7 @@ export default function AnaAlexPresencia({ persona, grande = false }: AnaAlexPre
             </span>
             <span
               style={{
-                fontFamily: 'Playfair Display, serif',
+                fontFamily: 'var(--font-playfair), serif',
                 color: '#BD886A',
                 fontSize: grande ? '0.75rem' : '0.625rem',
                 fontStyle: 'italic',
@@ -76,7 +76,7 @@ export default function AnaAlexPresencia({ persona, grande = false }: AnaAlexPre
 
       {!grande && (
         <span style={{
-          fontFamily: 'Poppins, sans-serif',
+          fontFamily: 'var(--font-poppins), sans-serif',
           color: '#BD886A',
           fontSize: 'clamp(0.8125rem, 2vw, 0.875rem)',
         }}>

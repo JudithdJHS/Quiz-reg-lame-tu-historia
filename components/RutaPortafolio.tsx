@@ -9,7 +9,7 @@ export default function RutaPortafolio({ pasos }: RutaPortafolioProps) {
     <div className="mt-8">
       <h3
         className="mb-5 text-center"
-        style={{ fontFamily: 'Playfair Display, serif', color: '#C49E50', fontSize: '1.25rem', fontWeight: 600 }}
+        style={{ fontFamily: 'var(--font-playfair), serif', color: '#C49E50', fontSize: '1.25rem', fontWeight: 600 }}
       >
         Tu ruta completa
       </h3>

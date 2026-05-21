@@ -27,7 +27,7 @@ export default function QuizCard({ pregunta, onRespuesta }: QuizCardProps) {
       {/* Microcopy */}
       {pregunta.microcopy && (
         <p style={{
-          fontFamily: 'Playfair Display, serif',
+          fontFamily: 'var(--font-playfair), serif',
           fontStyle: 'italic',
           color: '#BD886A',
           fontSize: 'clamp(0.875rem, 1.8vw, 1rem)',
@@ -54,7 +54,7 @@ export default function QuizCard({ pregunta, onRespuesta }: QuizCardProps) {
 
       {/* Pregunta — Playfair Italic, serif con impacto emocional */}
       <h2 style={{
-        fontFamily: 'Playfair Display, serif',
+        fontFamily: 'var(--font-playfair), serif',
         fontStyle: 'italic',
         fontSize: 'clamp(1.375rem, 4vw, 1.625rem)',
         fontWeight: 700,

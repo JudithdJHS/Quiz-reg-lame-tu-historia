@@ -26,10 +26,10 @@ export default function Bienvenida() {
           </svg>
         </div>
         <div style={{ textAlign: 'center', padding: '0 24px' }}>
-          <p style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontSize: '1.125rem', color: '#FDFAF6', lineHeight: '1.5', marginBottom: '8px' }}>
+          <p style={{ fontFamily: 'var(--font-playfair), serif', fontStyle: 'italic', fontSize: '1.125rem', color: '#FDFAF6', lineHeight: '1.5', marginBottom: '8px' }}>
             Ana y Alex
           </p>
-          <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.75rem', color: 'rgba(253,250,246,0.4)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+          <p style={{ fontFamily: 'var(--font-poppins), sans-serif', fontSize: '0.75rem', color: 'rgba(253,250,246,0.4)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
             Video próximamente
           </p>
         </div>
@@ -97,7 +97,7 @@ export default function Bienvenida() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.36 }}
-              style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 400, fontSize: '18px', color: '#3D3520', lineHeight: '1.8', marginBottom: '18px', textAlign: 'center' }}
+              style={{ fontFamily: 'var(--font-poppins), sans-serif', fontWeight: 400, fontSize: '18px', color: '#3D3520', lineHeight: '1.8', marginBottom: '18px', textAlign: 'center' }}
             >
               No todos los matrimonios viven la misma batalla.
               Algunos están luchando por salvar lo que queda.
@@ -111,7 +111,7 @@ export default function Bienvenida() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.44 }}
-              style={{ fontFamily: 'Playfair Display, serif', fontWeight: 400, fontStyle: 'italic', fontSize: '20px', color: '#C49E50', lineHeight: '1.8', marginBottom: '32px', textAlign: 'center' }}
+              style={{ fontFamily: 'var(--font-playfair), serif', fontWeight: 400, fontStyle: 'italic', fontSize: '20px', color: '#C49E50', lineHeight: '1.8', marginBottom: '32px', textAlign: 'center' }}
             >
               Responde con honestidad.
               Tal vez descubras algo que tu corazón ya sabía…
@@ -127,7 +127,7 @@ export default function Bienvenida() {
               <Link
                 href="/quiz"
                 className="block w-full text-center font-semibold text-lg transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 active:scale-[0.98]"
-                style={{ fontFamily: 'Poppins, sans-serif', backgroundColor: '#6B783E', color: '#FDFAF6', padding: '16px 0', borderRadius: '10px', boxShadow: '0 6px 24px rgba(107,120,62,0.28)', letterSpacing: '0.01em' }}
+                style={{ fontFamily: 'var(--font-poppins), sans-serif', backgroundColor: '#6B783E', color: '#FDFAF6', padding: '16px 0', borderRadius: '10px', boxShadow: '0 6px 24px rgba(107,120,62,0.28)', letterSpacing: '0.01em' }}
               >
                 Comenzar mi camino →
               </Link>
@@ -138,7 +138,7 @@ export default function Bienvenida() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.7 }}
-              style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.75rem', color: '#BD886A', marginTop: '28px', textAlign: 'center', letterSpacing: '0.03em' }}
+              style={{ fontFamily: 'var(--font-poppins), sans-serif', fontSize: '0.75rem', color: '#BD886A', marginTop: '28px', textAlign: 'center', letterSpacing: '0.03em' }}
             >
               © 2026 Regálame tu Historia · Ana y Alex
             </motion.p>

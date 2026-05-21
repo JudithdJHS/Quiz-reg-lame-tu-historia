@@ -12,7 +12,7 @@ export default function QuizProgress({ current, total }: QuizProgressProps) {
     <div className="w-full">
       <div className="flex items-end justify-between mb-2">
         <span style={{
-          fontFamily: 'Poppins, sans-serif',
+          fontFamily: 'var(--font-poppins), sans-serif',
           fontSize: '13px',
           fontWeight: 600,
           color: '#8A7E6E',
@@ -22,7 +22,7 @@ export default function QuizProgress({ current, total }: QuizProgressProps) {
         </span>
         {/* Número grande en Playfair */}
         <span style={{
-          fontFamily: 'Playfair Display, serif',
+          fontFamily: 'var(--font-playfair), serif',
           fontSize: '1.75rem',
           fontWeight: 700,
           color: '#C49E50',
