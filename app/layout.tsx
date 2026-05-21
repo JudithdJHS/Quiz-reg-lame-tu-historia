@@ -10,7 +10,7 @@ const playfair = Playfair_Display({
 
 const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
+  weight: ['300', '400', '600', '700', '800'],
   variable: '--font-poppins',
   display: 'swap',
 })
