@@ -97,7 +97,7 @@ export default function Bienvenida() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.36 }}
-              style={{ fontFamily: 'Poppins, sans-serif', fontSize: '18px', color: '#3D3520', lineHeight: '1.8', marginBottom: '18px', textAlign: 'center' }}
+              style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 400, fontSize: '18px', color: '#3D3520', lineHeight: '1.8', marginBottom: '18px', textAlign: 'center' }}
             >
               No todos los matrimonios viven la misma batalla.
               Algunos están luchando por salvar lo que queda.
@@ -111,7 +111,7 @@ export default function Bienvenida() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.44 }}
-              style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontSize: '20px', color: '#C49E50', lineHeight: '1.8', marginBottom: '32px', textAlign: 'center' }}
+              style={{ fontFamily: 'Playfair Display, serif', fontWeight: 400, fontStyle: 'italic', fontSize: '20px', color: '#C49E50', lineHeight: '1.8', marginBottom: '32px', textAlign: 'center' }}
             >
               Responde con honestidad.
               Tal vez descubras algo que tu corazón ya sabía…

@@ -19,6 +19,7 @@ export default function QuizOpcion({ texto, numero, seleccionada, onSelect }: Qu
       className="w-full text-left focus:outline-none"
       style={{
         fontFamily: 'Poppins, sans-serif',
+        fontWeight: 400,
         fontSize: 'clamp(1rem, 2.5vw, 1.125rem)',
         lineHeight: '1.55',
         color: '#3D3520',

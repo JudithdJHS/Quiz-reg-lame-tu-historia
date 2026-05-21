@@ -27,7 +27,7 @@ export default function CapturaEmail({ onSubmit, cargando }: CapturaEmailProps) 
     >
       <p
         className="text-center mb-1"
-        style={{ fontFamily: 'Poppins, sans-serif', color: '#BD886A', fontSize: '0.875rem' }}
+        style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 400, color: '#BD886A', fontSize: '0.875rem' }}
       >
         Has llegado hasta aquí. Eso ya dice mucho de ti.
       </p>
@@ -39,13 +39,13 @@ export default function CapturaEmail({ onSubmit, cargando }: CapturaEmailProps) 
       </h2>
       <p
         className="text-center mb-1"
-        style={{ fontFamily: 'Playfair Display, serif', color: '#3D3520', fontSize: '1.25rem' }}
+        style={{ fontFamily: 'Playfair Display, serif', fontWeight: 400, color: '#3D3520', fontSize: '1.25rem' }}
       >
         Tu camino a la restauración está listo.
       </p>
       <p
         className="text-center mb-8"
-        style={{ fontFamily: 'Poppins, sans-serif', color: '#BD886A', fontSize: '1rem', lineHeight: '1.6' }}
+        style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 400, color: '#BD886A', fontSize: '1rem', lineHeight: '1.6' }}
       >
         Te enviamos tu camino completo con la ruta que hemos trazado para ti.
       </p>
@@ -114,7 +114,7 @@ export default function CapturaEmail({ onSubmit, cargando }: CapturaEmailProps) 
               )}
             </div>
           </div>
-          <span style={{ fontFamily: 'Poppins, sans-serif', fontSize: '0.8125rem', color: '#BD886A', lineHeight: '1.5' }}>
+          <span style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 400, fontSize: '0.8125rem', color: '#BD886A', lineHeight: '1.5' }}>
             He leído y acepto la política de privacidad de Regálame tu Historia.
             Puedo darme de baja cuando quiera.
           </span>

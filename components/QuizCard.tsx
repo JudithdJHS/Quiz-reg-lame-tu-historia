@@ -58,7 +58,7 @@ export default function QuizCard({ pregunta, onRespuesta }: QuizCardProps) {
         fontStyle: 'italic',
         fontSize: 'clamp(1.375rem, 4vw, 1.625rem)',
         fontWeight: 700,
-        color: '#3D3520',
+        color: '#6B783E',
         lineHeight: '1.35',
         letterSpacing: '-0.01em',
         textAlign: 'center',
