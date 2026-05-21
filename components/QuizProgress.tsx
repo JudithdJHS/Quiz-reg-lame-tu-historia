@@ -12,11 +12,11 @@ export default function QuizProgress({ current, total }: QuizProgressProps) {
     <div className="w-full">
       <div className="flex items-end justify-between mb-2">
         <span style={{
-          fontFamily: 'Inter, sans-serif',
-          fontSize: '0.6875rem',
+          fontFamily: 'Poppins, sans-serif',
+          fontSize: '0.875rem',
           fontWeight: 600,
-          color: '#BD886A',
-          letterSpacing: '0.1em',
+          color: '#6B783E',
+          letterSpacing: '0.08em',
           textTransform: 'uppercase' as const,
         }}>
           Pregunta {current} de {total}

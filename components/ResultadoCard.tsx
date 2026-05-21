@@ -7,6 +7,7 @@ import RutaCamino from './RutaCamino'
 interface ResultadoCardProps {
   resultado: ResultadoPerfil
   nombre: string
+  q3?: string
 }
 
 const FADE_UP = (delay = 0) => ({
@@ -27,7 +28,7 @@ function splitNombre(nombre: string): { regular: string; italic: string } {
   }
 }
 
-export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps) {
+export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardProps) {
   const urlProducto =
     resultado.urlProductoKey === 'EMAIL_CONTACTO'
       ? 'mailto:regalametuhistoria@gmail.com'
@@ -48,7 +49,7 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
       >
         {nombre && (
           <p style={{
-            fontFamily: 'Inter, sans-serif',
+            fontFamily: 'Poppins, sans-serif',
             color: '#BD886A',
             fontSize: '0.9375rem',
             letterSpacing: '0.04em',
@@ -79,7 +80,7 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
 
         {/* Label premium — Inter 11px, tracking 0.15em */}
         <p style={{
-          fontFamily: 'Inter, sans-serif',
+          fontFamily: 'Poppins, sans-serif',
           fontSize: '0.6875rem',
           fontWeight: 600,
           color: '#C49E50',
@@ -106,7 +107,7 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
 
         {/* Subtítulo — Inter Light 16px */}
         <p style={{
-          fontFamily: 'Inter, sans-serif',
+          fontFamily: 'Poppins, sans-serif',
           fontWeight: 300,
           color: '#BD886A',
           fontSize: '1rem',
@@ -122,10 +123,10 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
           paddingLeft: '20px',
         }}>
           <p style={{
-            fontFamily: 'Inter, sans-serif',
+            fontFamily: 'Poppins, sans-serif',
             color: '#3D3520',
-            fontSize: '0.9375rem',
-            lineHeight: '1.85',
+            fontSize: 'clamp(1rem, 2.5vw, 1.125rem)',
+            lineHeight: '1.75',
           }}>
             {resultado.situacion}
           </p>
@@ -164,7 +165,7 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
         </div>
 
         <p style={{
-          fontFamily: 'Inter, sans-serif',
+          fontFamily: 'Poppins, sans-serif',
           fontSize: '0.6875rem',
           fontWeight: 600,
           color: '#BD886A',
@@ -205,8 +206,8 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
           fontFamily: 'Playfair Display, serif',
           fontStyle: 'italic',
           color: '#3D3520',
-          fontSize: 'clamp(1.125rem, 3vw, 1.5rem)',
-          lineHeight: '1.6',
+          fontSize: 'clamp(1.125rem, 3vw, 1.375rem)',
+          lineHeight: '1.65',
           letterSpacing: '-0.01em',
         }}>
           {resultado.mensaje}
@@ -219,7 +220,7 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
       {/* ── COSTO DE LA INACCIÓN + VISIÓN ─────────────────────── */}
       <motion.div style={{ marginBottom: '44px' }} {...FADE_UP()}>
         <p style={{
-          fontFamily: 'Inter, sans-serif',
+          fontFamily: 'Poppins, sans-serif',
           color: '#BD886A',
           fontSize: '0.9375rem',
           lineHeight: '1.85',
@@ -233,7 +234,7 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
             <span style={{
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: 'Poppins, sans-serif',
               fontSize: '0.6875rem',
               fontWeight: 700,
               color: '#BD886A',
@@ -246,7 +247,7 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
               No prometemos
             </span>
             <p style={{
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: 'Poppins, sans-serif',
               color: '#3D3520',
               fontSize: '0.9375rem',
               lineHeight: '1.65',
@@ -258,7 +259,7 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
 
           <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
             <span style={{
-              fontFamily: 'Inter, sans-serif',
+              fontFamily: 'Poppins, sans-serif',
               fontSize: '0.6875rem',
               fontWeight: 700,
               color: '#6B783E',
@@ -308,7 +309,7 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
         {...FADE_UP()}
       >
         <p style={{
-          fontFamily: 'Inter, sans-serif',
+          fontFamily: 'Poppins, sans-serif',
           fontSize: '0.6875rem',
           fontWeight: 700,
           color: 'rgba(253,250,246,0.5)',
@@ -332,7 +333,7 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
         </h3>
 
         <p style={{
-          fontFamily: 'Inter, sans-serif',
+          fontFamily: 'Poppins, sans-serif',
           color: 'rgba(253,250,246,0.7)',
           fontSize: '0.9375rem',
           lineHeight: '1.65',
@@ -347,7 +348,7 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
           rel="noopener noreferrer"
           className="block w-full text-center font-semibold transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
           style={{
-            fontFamily: 'Inter, sans-serif',
+            fontFamily: 'Poppins, sans-serif',
             fontSize: '1rem',
             backgroundColor: '#FDFAF6',
             color: '#3D3520',
@@ -361,7 +362,7 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
 
         {resultado.precio && (
           <p className="text-center" style={{
-            fontFamily: 'Inter, sans-serif',
+            fontFamily: 'Poppins, sans-serif',
             color: 'rgba(253,250,246,0.45)',
             fontSize: '0.8125rem',
             marginTop: '10px',
@@ -371,6 +372,235 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
           </p>
         )}
       </motion.div>
+
+      {/* ── RECURSOS SECUNDARIOS — Perfil A y E ───────────────── */}
+      {resultado.recursosSecundarios && (
+        <motion.div
+          style={{
+            marginTop: '16px',
+            padding: '32px 24px',
+            backgroundColor: '#FDFAF6',
+            borderRadius: '12px',
+            border: '1px solid rgba(196,158,80,0.18)',
+          }}
+          {...FADE_UP()}
+        >
+          <p style={{
+            fontFamily: 'Poppins, sans-serif',
+            fontSize: '0.6875rem',
+            fontWeight: 700,
+            color: '#C49E50',
+            textTransform: 'uppercase',
+            letterSpacing: '0.15em',
+            marginBottom: '20px',
+          }}>
+            {resultado.recursosSecundarios.titulo}
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {resultado.recursosSecundarios.recursos.map((r, i) => (
+              <div key={i} style={{
+                padding: '20px',
+                backgroundColor: '#F5EDE0',
+                borderRadius: '10px',
+                border: '1px solid rgba(196,158,80,0.2)',
+              }}>
+                <p style={{
+                  fontFamily: 'Playfair Display, serif',
+                  fontStyle: 'italic',
+                  fontSize: '1.0625rem',
+                  fontWeight: 700,
+                  color: '#3D3520',
+                  marginBottom: '6px',
+                }}>
+                  {r.nombre}
+                </p>
+                <p style={{
+                  fontFamily: 'Poppins, sans-serif',
+                  fontSize: '0.875rem',
+                  color: '#BD886A',
+                  lineHeight: '1.6',
+                  marginBottom: '10px',
+                }}>
+                  {r.descripcion}
+                </p>
+                <p style={{
+                  fontFamily: 'Poppins, sans-serif',
+                  fontSize: '0.8125rem',
+                  color: '#6B783E',
+                  fontWeight: 600,
+                  marginBottom: '12px',
+                }}>
+                  {r.precio}
+                </p>
+                <a
+                  href={r.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontFamily: 'Poppins, sans-serif',
+                    fontSize: '0.875rem',
+                    color: '#6B783E',
+                    fontWeight: 600,
+                    textDecoration: 'underline',
+                    textUnderlineOffset: '3px',
+                  }}
+                >
+                  {i === 0 ? resultado.recursosSecundarios!.ctaTexto : 'Escuchar la guía →'}
+                </a>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      )}
+
+      {/* ── BLOQUE CONDICIONAL PERFIL C según Q3 ─────────────── */}
+      {resultado.etiqueta === 'perfil-crisis-aguda' && q3 === 'C' && (
+        <motion.div
+          style={{
+            marginTop: '16px',
+            padding: '32px 24px',
+            backgroundColor: '#FDFAF6',
+            borderRadius: '12px',
+            border: '1px solid rgba(196,158,80,0.18)',
+          }}
+          {...FADE_UP()}
+        >
+          <p style={{
+            fontFamily: 'Poppins, sans-serif',
+            fontSize: '0.6875rem',
+            fontWeight: 700,
+            color: '#C49E50',
+            textTransform: 'uppercase',
+            letterSpacing: '0.15em',
+            marginBottom: '14px',
+          }}>
+            Entrada inmediata
+          </p>
+          <p style={{
+            fontFamily: 'Poppins, sans-serif',
+            color: '#3D3520',
+            fontSize: '0.9375rem',
+            lineHeight: '1.75',
+            marginBottom: '16px',
+          }}>
+            Mientras esperas la próxima cohorte del taller, tenemos un espacio creado exactamente para lo que estás viviendo:
+          </p>
+          <p style={{
+            fontFamily: 'Playfair Display, serif',
+            fontStyle: 'italic',
+            fontSize: '1.125rem',
+            fontWeight: 700,
+            color: '#3D3520',
+            marginBottom: '8px',
+          }}>
+            Taller "Infidelidad: sanar y reconstruir"
+          </p>
+          <p style={{
+            fontFamily: 'Poppins, sans-serif',
+            fontSize: '0.875rem',
+            color: '#BD886A',
+            lineHeight: '1.6',
+            marginBottom: '8px',
+          }}>
+            Un proceso corto y muy estructurado, con workbook descargable. No reemplaza el taller en vivo — lo prepara.
+          </p>
+          <p style={{
+            fontFamily: 'Poppins, sans-serif',
+            fontSize: '0.8125rem',
+            color: '#6B783E',
+            fontWeight: 600,
+            marginBottom: '16px',
+          }}>
+            $97–127 USD · Pago único
+          </p>
+          <a
+            href={process.env.NEXT_PUBLIC_URL_TALLER || '#'}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full text-center font-semibold transition-all duration-200 hover:opacity-90"
+            style={{
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '1rem',
+              backgroundColor: '#6B783E',
+              color: '#FDFAF6',
+              padding: '15px 24px',
+              borderRadius: '8px',
+            }}
+          >
+            Quiero empezar aquí →
+          </a>
+        </motion.div>
+      )}
+
+      {resultado.etiqueta === 'perfil-crisis-aguda' && q3 === 'P' && (
+        <motion.div
+          style={{
+            marginTop: '16px',
+            padding: '32px 24px',
+            backgroundColor: '#FDFAF6',
+            borderRadius: '12px',
+            border: '1px solid rgba(196,158,80,0.18)',
+          }}
+          {...FADE_UP()}
+        >
+          <p style={{
+            fontFamily: 'Poppins, sans-serif',
+            fontSize: '0.6875rem',
+            fontWeight: 700,
+            color: '#C49E50',
+            textTransform: 'uppercase',
+            letterSpacing: '0.15em',
+            marginBottom: '14px',
+          }}>
+            Entrada inmediata
+          </p>
+          <p style={{
+            fontFamily: 'Poppins, sans-serif',
+            color: '#3D3520',
+            fontSize: '0.9375rem',
+            lineHeight: '1.75',
+            marginBottom: '16px',
+          }}>
+            Hay un taller creado para este dolor específico. Es el lugar más honesto donde hemos podido hablar de esto.
+          </p>
+          <p style={{
+            fontFamily: 'Playfair Display, serif',
+            fontStyle: 'italic',
+            fontSize: '1.125rem',
+            fontWeight: 700,
+            color: '#3D3520',
+            marginBottom: '8px',
+          }}>
+            Taller "Pornografía en el matrimonio"
+          </p>
+          <p style={{
+            fontFamily: 'Poppins, sans-serif',
+            fontSize: '0.8125rem',
+            color: '#6B783E',
+            fontWeight: 600,
+            marginBottom: '16px',
+          }}>
+            $97–127 USD · Pago único
+          </p>
+          <a
+            href={process.env.NEXT_PUBLIC_URL_TALLER || '#'}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full text-center font-semibold transition-all duration-200 hover:opacity-90"
+            style={{
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '1rem',
+              backgroundColor: '#6B783E',
+              color: '#FDFAF6',
+              padding: '15px 24px',
+              borderRadius: '8px',
+            }}
+          >
+            Ver este taller →
+          </a>
+        </motion.div>
+      )}
 
     </div>
   )

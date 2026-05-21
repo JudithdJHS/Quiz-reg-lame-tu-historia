@@ -56,13 +56,14 @@ export default function QuizCard({ pregunta, onRespuesta }: QuizCardProps) {
       <h2 style={{
         fontFamily: 'Playfair Display, serif',
         fontStyle: 'italic',
-        fontSize: 'clamp(1.25rem, 4vw, 1.625rem)',
-        fontWeight: 600,
+        fontSize: 'clamp(1.375rem, 4vw, 1.625rem)',
+        fontWeight: 700,
         color: '#3D3520',
-        lineHeight: '1.38',
+        lineHeight: '1.35',
         letterSpacing: '-0.01em',
         textAlign: 'center',
-        marginBottom: 'clamp(20px, 4vw, 30px)',
+        maxWidth: '680px',
+        margin: '0 auto clamp(20px, 4vw, 30px)',
       }}>
         {pregunta.texto}
       </h2>

@@ -40,6 +40,24 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
     ctaTexto: 'Empieza el Taller Grabado hoy →',
     etiqueta: 'perfil-espera-sola',
     secuencia: 'A',
+    recursosSecundarios: {
+      titulo: 'TAMBIÉN PARA TI — RECURSOS PARA EL CAMINO EN SOLITARIO',
+      recursos: [
+        {
+          nombre: 'Taller "Sanando mi Parte"',
+          descripcion: 'Para sanar las heridas propias que no dependen de que él esté listo. 3–4 sesiones en video con workbook incluido. Trabajo interior real, a tu ritmo.',
+          precio: '$97–127 USD · Pago único · Sin suscripción.',
+          url: process.env.NEXT_PUBLIC_URL_TALLER || '#',
+        },
+        {
+          nombre: 'Guía Premium "Penitencia por Amor"',
+          descripcion: 'Audio íntimo narrado por Ana. Acompañamiento espiritual diario para el proceso interior — para quien camina sola pero no sin Dios.',
+          precio: '$27–47 USD · Pago único.',
+          url: '#',
+        },
+      ],
+      ctaTexto: 'Quiero trabajar mi parte →',
+    },
   },
 
   B: {
@@ -202,6 +220,18 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
     ctaTexto: 'Empezar por $32/mes →',
     etiqueta: 'perfil-barrera-economica',
     secuencia: 'B',
+    recursosSecundarios: {
+      titulo: 'UNA ALTERNATIVA SIN SUSCRIPCIÓN',
+      recursos: [
+        {
+          nombre: 'Taller "Sanando mi Parte"',
+          descripcion: 'Pago único, sin mensualidades. 3–4 sesiones en video para trabajar tu proceso interior sin comprometerte a una suscripción. Ideal si el $32/mes se siente incierto.',
+          precio: '$97–127 USD · Pago único · Sin suscripción.',
+          url: process.env.NEXT_PUBLIC_URL_TALLER || '#',
+        },
+      ],
+      ctaTexto: 'Ver opción de pago único →',
+    },
   },
 
   F: {

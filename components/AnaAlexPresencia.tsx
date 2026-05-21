@@ -76,7 +76,7 @@ export default function AnaAlexPresencia({ persona, grande = false }: AnaAlexPre
 
       {!grande && (
         <span style={{
-          fontFamily: 'Inter, sans-serif',
+          fontFamily: 'Poppins, sans-serif',
           color: '#BD886A',
           fontSize: 'clamp(0.8125rem, 2vw, 0.875rem)',
         }}>

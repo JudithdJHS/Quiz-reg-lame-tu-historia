@@ -42,6 +42,19 @@ export interface MasterclassGratuita {
   caption: string
 }
 
+export interface RecursoSecundario {
+  nombre: string
+  descripcion: string
+  precio: string
+  url: string
+}
+
+export interface RecursosSecundarios {
+  titulo: string
+  recursos: RecursoSecundario[]
+  ctaTexto: string
+}
+
 export interface ResultadoPerfil {
   nombre: string
   subtitulo: string
@@ -54,6 +67,7 @@ export interface ResultadoPerfil {
   pasosCamino: PasoCamino[]
   destinoCamino: string
   masterclassGratuita: MasterclassGratuita
+  recursosSecundarios?: RecursosSecundarios
   primerPaso: string
   descripcionProducto: string
   precio: string
@@ -70,6 +84,7 @@ export interface QuizSesion {
   compromiso: Compromiso
   nombre: string
   timestamp: number
+  q3?: string
 }
 
 export interface SubmitPayload {

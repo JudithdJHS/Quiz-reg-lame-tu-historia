@@ -44,6 +44,7 @@ export default function QuizPage() {
       compromiso: clasificacion.compromiso,
       nombre,
       timestamp: Date.now(),
+      q3: respuestas.q3,
     }
     sessionStorage.setItem('rth_quiz_resultado', JSON.stringify(sesion))
 

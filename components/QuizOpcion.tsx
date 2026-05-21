@@ -18,16 +18,17 @@ export default function QuizOpcion({ texto, numero, seleccionada, onSelect }: Qu
       whileTap={{ scale: 0.99 }}
       className="w-full text-left focus:outline-none"
       style={{
-        fontFamily: 'Inter, sans-serif',
-        fontSize: 'clamp(0.9375rem, 2.2vw, 1rem)',
-        lineHeight: '1.6',
+        fontFamily: 'Poppins, sans-serif',
+        fontSize: 'clamp(1rem, 2.5vw, 1.125rem)',
+        lineHeight: '1.55',
         color: '#3D3520',
         backgroundColor: seleccionada ? '#FDFAF6' : '#FDFAF6',
         border: seleccionada
-          ? '1px solid #C49E50'
-          : '1px solid rgba(196,158,80,0.22)',
-        borderRadius: '10px',
-        padding: 'clamp(13px, 2vw, 17px) clamp(14px, 2.5vw, 20px)',
+          ? '1.5px solid #6B783E'
+          : '1.5px solid #E0D5C4',
+        borderRadius: '12px',
+        padding: '18px 24px',
+        minHeight: '56px',
         display: 'flex',
         alignItems: 'flex-start',
         gap: '14px',
@@ -39,22 +40,22 @@ export default function QuizOpcion({ texto, numero, seleccionada, onSelect }: Qu
       }}
       onMouseEnter={e => {
         if (!seleccionada) {
-          e.currentTarget.style.borderColor = 'rgba(196,158,80,0.5)'
-          e.currentTarget.style.boxShadow = '0 2px 12px rgba(61,53,32,0.07)'
+          e.currentTarget.style.borderColor = '#6B783E'
+          e.currentTarget.style.backgroundColor = 'rgba(107,120,62,0.07)'
           e.currentTarget.style.transform = 'translateX(3px)'
         }
       }}
       onMouseLeave={e => {
         if (!seleccionada) {
-          e.currentTarget.style.borderColor = 'rgba(196,158,80,0.22)'
-          e.currentTarget.style.boxShadow = '0 1px 3px rgba(61,53,32,0.04)'
+          e.currentTarget.style.borderColor = '#E0D5C4'
+          e.currentTarget.style.backgroundColor = '#FDFAF6'
           e.currentTarget.style.transform = 'translateX(0px)'
         }
       }}
     >
       {/* Número 01, 02, 03... */}
       <span style={{
-        fontFamily: 'Inter, sans-serif',
+        fontFamily: 'Poppins, sans-serif',
         fontSize: '0.75rem',
         fontWeight: 600,
         color: seleccionada ? '#C49E50' : 'rgba(196,158,80,0.55)',
