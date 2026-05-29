@@ -111,7 +111,7 @@ export default function Bienvenida() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.44 }}
-              style={{ fontFamily: 'var(--font-poppins), sans-serif', fontWeight: 400, fontSize: '16px', color: '#3D3520', lineHeight: '1.8', marginBottom: '32px', textAlign: 'center' }}
+              style={{ fontFamily: 'var(--font-playfair), serif', fontWeight: 400, fontStyle: 'italic', fontSize: '20px', color: '#C49E50', lineHeight: '1.8', marginBottom: '32px', textAlign: 'center' }}
             >
               Responde con honestidad. Al finalizar, descubrirás el momento que estás viviendo hoy, recibirás una orientación personalizada y conocerás el camino más adecuado para comenzar un proceso de sanación, restauración y crecimiento para ti, tu relación y tu familia.
             </motion.p>
