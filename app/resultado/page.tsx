@@ -80,7 +80,7 @@ function HeroFoto() {
             textShadow: imgError ? 'none' : '0 1px 4px rgba(0,0,0,0.25)',
           }}
         >
-          Terapeutas de Pareja y Familia
+          Terapeutas de Familia y de Pareja
         </p>
       </div>
     </div>
@@ -202,7 +202,7 @@ export default function ResultadoPage() {
               marginBottom: '8px',
               textAlign: 'left',
             }}>
-              Por qué falla la comunicación en matrimonios católicos
+              Por qué falla la comunicación en los matrimonios
             </h2>
 
             <p style={{

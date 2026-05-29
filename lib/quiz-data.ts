@@ -11,7 +11,7 @@ export const PREGUNTAS: PreguntaQuiz[] = [
       { id: 'D', texto: '"Tenemos problemas, pero creo que no son tan graves."' },
       { id: 'E', texto: '"Quiero ayuda, pero no sé si puedo costearla."' },
       { id: 'F', texto: '"Voy a casarme y quiero hacerlo bien desde el inicio."' },
-      { id: 'G', texto: '"Estoy discerniendo si el matrimonio es mi camino."' },
+      { id: 'G', texto: '"Vivimos juntos pero sin casarnos — y queremos hacer esto bien."' },
       { id: 'H', texto: '"Mi matrimonio está bien, pero queremos crecer en santidad."' },
     ]
   },
@@ -21,13 +21,13 @@ export const PREGUNTAS: PreguntaQuiz[] = [
     texto: '¿Qué describe mejor tu situación actual con tu pareja?',
     opciones: [
       { id: 'A', texto: 'Él no quiere participar en ningún proceso de ayuda, pero yo sigo aquí.' },
-      { id: 'B', texto: 'Hablamos de lo necesario, pero ya no nos contamos nada de verdad.' },
+      { id: 'B', texto: 'Hablamos lo necesario, ya no encontramos de qué hablar.' },
       { id: 'C', texto: 'Estamos separados, hay una infidelidad de por medio, o estamos al borde de tomar una decisión definitiva.' },
       { id: 'D', texto: 'Tenemos roces y momentos difíciles, pero en general seguimos adelante.' },
       { id: 'E', texto: 'Necesitamos ayuda pero la situación económica lo complica todo.' },
       { id: 'F', texto: 'Somos novios o estamos próximos a casarnos.' },
-      { id: 'G', texto: 'No tengo una relación definida todavía — estoy buscando claridad.' },
-      { id: 'H', texto: 'Nuestra relación es buena y queremos llevarla a un nivel más profundo.' },
+      { id: 'G', texto: 'Vivimos en unión libre y queremos entender qué implica el matrimonio desde la fe.' },
+      { id: 'H', texto: 'Nuestra relación es buena, pero queremos fortalecerla con más herramientas.' },
     ]
   },
   {
@@ -36,12 +36,12 @@ export const PREGUNTAS: PreguntaQuiz[] = [
     texto: '¿Qué es lo que más te duele en este momento?',
     opciones: [
       { id: 'A', texto: 'Sentir que soy la única que lucha por algo que debería ser de dos.' },
-      { id: 'B', texto: 'La frialdad, el silencio o la sensación de vivir como compañeros de casa.' },
+      { id: 'B', texto: 'La indiferencia, la frialdad, el silencio, la sensación de vivir como compañeros de casa.' },
       { id: 'C', texto: 'El dolor de una herida muy reciente — traición, pérdida de confianza o ruptura.' },
       { id: 'D', texto: 'Ver que nos alejamos poco a poco sin saber cómo detenerlo.' },
       { id: 'E', texto: 'Querer sanar pero sentir que no tengo acceso a la ayuda que necesito.' },
       { id: 'F', texto: 'El miedo a repetir historias de dolor que ya vi en otros.' },
-      { id: 'G', texto: 'No saber si lo que siento es vocación o miedo disfrazado de amor.' },
+      { id: 'G', texto: 'Sentir que queremos algo más pero no saber cómo dar ese paso desde la fe.' },
       { id: 'H', texto: 'Saber que hay más para vivir juntos espiritualmente y no saber cómo llegar ahí.' },
     ]
   },
@@ -54,9 +54,9 @@ export const PREGUNTAS: PreguntaQuiz[] = [
       { id: 'C', texto: 'La comunicación está rota o es muy dolorosa cuando ocurre.' },
       { id: 'D', texto: 'A veces nos cuesta entendernos, pero no es un problema grave.' },
       { id: 'E', texto: 'Queremos hablar mejor pero no sabemos cómo y los recursos para aprender son limitados.' },
-      { id: 'F', texto: 'Queremos aprender a comunicarnos bien antes de casarnos.' },
-      { id: 'G', texto: 'Todavía no hay una relación estable que definir.' },
-      { id: 'H', texto: 'Nos comunicamos bien, pero queremos conversaciones más profundas y con propósito.' },
+      { id: 'F', texto: 'Es buena, pero sabemos que en el matrimonio podría complicarse si no aprendemos bien cómo hacerlo desde el noviazgo.' },
+      { id: 'G', texto: 'Nos comunicamos, pero evitamos hablar de formalizar o de lo que Dios quiere para nosotros.' },
+      { id: 'H', texto: 'Nos comunicamos bien, pero creo que podría ser mejor.' },
     ]
   },
   {
@@ -70,7 +70,7 @@ export const PREGUNTAS: PreguntaQuiz[] = [
       { id: 'D', texto: 'Me da curiosidad, pero no sé si realmente lo necesito.' },
       { id: 'E', texto: 'Lo quiero con todo mi corazón, pero el dinero es un obstáculo real.' },
       { id: 'F', texto: 'Quiero formarme antes de casarme — es una decisión consciente.' },
-      { id: 'G', texto: 'Quiero entender qué quiere Dios para mí antes de comprometerme.' },
+      { id: 'G', texto: 'Queremos hacer esto bien — desde la fe, con herramientas reales.' },
       { id: 'H', texto: 'Estamos bien y queremos seguir creciendo — es una elección de profundidad, no de crisis.' },
     ]
   },
@@ -85,7 +85,7 @@ export const PREGUNTAS: PreguntaQuiz[] = [
       { id: 'D', texto: 'Vamos a misa, pero no tenemos una vida espiritual profunda como pareja.' },
       { id: 'E', texto: 'La fe es importante para mí aunque nuestra situación sea complicada.' },
       { id: 'F', texto: 'Quiero que Dios esté en el centro de nuestro matrimonio desde el primer día.' },
-      { id: 'G', texto: 'Busco entender lo que Dios quiere para mi vida — el matrimonio o la consagración.' },
+      { id: 'G', texto: 'La fe nos importa, pero nuestra situación hace que nos cueste saber cómo integrarla.' },
       { id: 'H', texto: 'La fe es el eje de nuestra relación y queremos profundizar juntos.' },
     ]
   },
@@ -100,7 +100,7 @@ export const PREGUNTAS: PreguntaQuiz[] = [
       { id: 'D', texto: 'Entender si realmente necesitamos ayuda antes de que sea tarde.' },
       { id: 'E', texto: 'Encontrar un camino de sanación que sea posible para mí.' },
       { id: 'F', texto: 'Construir desde el principio algo que dure de verdad.' },
-      { id: 'G', texto: 'Claridad. Saber si el matrimonio es para mí y cómo discernirlo bien.' },
+      { id: 'G', texto: 'Dar el paso correcto — y que Dios esté en el centro de lo que construyamos.' },
       { id: 'H', texto: 'Que nuestro matrimonio sea testimonio — que lleve a otros a Dios.' },
     ]
   },
@@ -111,7 +111,7 @@ export const PREGUNTAS: PreguntaQuiz[] = [
       { id: 'A', texto: 'Llevo meses siguiendo a Ana y Alex — sus videos describen exactamente lo que vivo.', temperatura: 'caliente' },
       { id: 'B', texto: 'Alguien me compartió esto y quise intentarlo.', temperatura: 'frio' },
       { id: 'C', texto: 'Vi un reel o video y algo me detuvo — sentí que era para mí.', temperatura: 'frio' },
-      { id: 'D', texto: 'Ya hice el taller antes y quiero seguir el proceso.', temperatura: 'caliente', esExAlumno: true },
+      { id: 'D', texto: 'Yo estuve en el taller Del infierno al cielo en el matrimonio y quiero seguir el proceso.', temperatura: 'caliente', esExAlumno: true },
     ]
   },
   {
@@ -125,13 +125,13 @@ export const PREGUNTAS: PreguntaQuiz[] = [
       { id: 'D', texto: 'Entender mejor qué está pasando en mi relación antes de actuar.', compromisoSenal: 'bajo' },
       { id: 'E', texto: 'Encontrar una forma de acceder a ayuda dentro de mis posibilidades.', compromisoSenal: 'alto' },
       { id: 'F', texto: 'Formarme para llegar al matrimonio con herramientas reales.', compromisoSenal: 'alto' },
-      { id: 'G', texto: 'Tener un espacio para discernir con profundidad y sin presión.', compromisoSenal: 'medio' },
+      { id: 'G', texto: 'Entender qué implica el matrimonio desde la fe y cómo empezar a movernos hacia eso.', compromisoSenal: 'medio' },
       { id: 'H', texto: 'Profundizar juntos en algo que nos acerque más a Dios y el uno al otro.', compromisoSenal: 'alto' },
     ]
   },
   {
     id: 'q10', tipo: 'filtro-compromiso-directo', foto: 'alex',
-    texto: '¿Estás dispuesto/a a trabajar en tu proceso aunque sea incómodo, aunque requiera tiempo y aunque los resultados no sean inmediatos?',
+    texto: '¿Estás dispuesto/a a trabajar en tu proceso, aunque requiera tiempo y aunque los resultados no sean inmediatos?',
     opciones: [
       { id: 'A', texto: 'Sí. Estoy cansado/a de seguir igual y quiero hacer algo diferente de verdad.', compromiso: 'alto' },
       { id: 'B', texto: 'Creo que sí, aunque tengo dudas de si podré con todo el proceso.', compromiso: 'alto' },
@@ -141,7 +141,7 @@ export const PREGUNTAS: PreguntaQuiz[] = [
   },
   {
     id: 'q11', tipo: 'perfil', foto: 'ana',
-    texto: 'Cuando ves contenido sobre sanación matrimonial, ¿qué pasa normalmente?',
+    texto: '¿Cuándo ves contenido de sanación matrimonial, qué pasa por tu mente?',
     opciones: [
       { id: 'A', texto: '"Ojalá mi pareja quisiera ver esto conmigo."' },
       { id: 'B', texto: '"Esto describe exactamente lo que estamos viviendo."' },
@@ -149,7 +149,7 @@ export const PREGUNTAS: PreguntaQuiz[] = [
       { id: 'D', texto: '"Es para matrimonios con problemas más graves que el mío."' },
       { id: 'E', texto: '"Me encantaría acceder a esto, pero no sé si puedo costear el proceso."' },
       { id: 'F', texto: '"Quiero aprender antes de vivir una crisis, no después."' },
-      { id: 'G', texto: '"Me sirve para entender si el matrimonio es lo que Dios quiere para mí."' },
+      { id: 'G', texto: '"Me hace pensar en si estamos listos para dar el paso y hacerlo bien."' },
       { id: 'H', texto: '"Siempre encuentro algo nuevo para llevar a nuestra relación."' },
     ]
   },
@@ -163,7 +163,7 @@ export const PREGUNTAS: PreguntaQuiz[] = [
       { id: 'D', texto: 'Cuidar lo que tenemos antes de perderlo.' },
       { id: 'E', texto: 'Saber que hay un camino posible aunque mis recursos sean limitados.' },
       { id: 'F', texto: 'Llegar al altar sabiendo lo que estoy prometiendo.' },
-      { id: 'G', texto: 'Entender si el matrimonio es mi vocación — y cómo saberlo con certeza.' },
+      { id: 'G', texto: 'Que lo que estamos construyendo juntos tenga a Dios en el centro — y sea para siempre.' },
       { id: 'H', texto: 'Llegar juntos al cielo. Eso es todo.' },
     ]
   },

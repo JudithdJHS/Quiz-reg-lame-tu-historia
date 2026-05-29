@@ -41,13 +41,13 @@ export default function CapturaEmail({ onSubmit, cargando }: CapturaEmailProps) 
         className="text-center mb-1"
         style={{ fontFamily: 'var(--font-playfair), serif', fontWeight: 400, color: '#3D3520', fontSize: '1.25rem' }}
       >
-        Tu camino a la restauración está listo.
+        Tu camino está listo.
       </p>
       <p
         className="text-center mb-8"
         style={{ fontFamily: 'var(--font-poppins), sans-serif', fontWeight: 400, color: '#BD886A', fontSize: '1rem', lineHeight: '1.6' }}
       >
-        Te enviamos tu camino completo con la ruta que hemos trazado para ti.
+        ¿Dónde lo recibirás? Te enviaremos tu camino completo con la ruta que hemos trazado para ti.
       </p>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">

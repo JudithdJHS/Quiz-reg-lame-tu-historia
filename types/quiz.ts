@@ -73,6 +73,7 @@ export interface ResultadoPerfil {
   precio: string
   urlProductoKey: string
   ctaTexto: string
+  ctaSecundario?: string
   etiqueta: string
   secuencia: SecuenciaId
 }

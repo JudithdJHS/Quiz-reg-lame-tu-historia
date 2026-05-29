@@ -312,6 +312,50 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
           {resultado.descripcionProducto}
         </p>
 
+        {/* ── BLOQUE MEMBRESÍA (C49) ─────────────────────────── */}
+        <div style={{
+          borderTop: '1px solid rgba(253,250,246,0.2)',
+          paddingTop: '20px',
+          marginBottom: '20px',
+        }}>
+          <p style={{
+            fontFamily: 'var(--font-poppins), sans-serif',
+            fontSize: '11px',
+            fontWeight: 700,
+            color: 'rgba(253,250,246,0.55)',
+            textTransform: 'uppercase',
+            letterSpacing: '2px',
+            marginBottom: '6px',
+          }}>
+            ¿Ya hiciste el Taller Grabado?
+          </p>
+          <p style={{
+            fontFamily: 'var(--font-poppins), sans-serif',
+            fontWeight: 400,
+            fontSize: '14px',
+            color: 'rgba(253,250,246,0.75)',
+            lineHeight: '1.6',
+            marginBottom: '10px',
+          }}>
+            Tu siguiente paso es la Membresía <em>Un Camino para Sanar</em>. También incluye sesión grupal en vivo semanal con Ana y Alex.
+          </p>
+          <a
+            href={process.env.NEXT_PUBLIC_URL_MEMBRESIA || '#'}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontFamily: 'var(--font-poppins), sans-serif',
+              fontSize: '13px',
+              fontWeight: 600,
+              color: '#C49E50',
+              textDecoration: 'underline',
+              textUnderlineOffset: '3px',
+            }}
+          >
+            Ver la Membresía Un Camino para Sanar →
+          </a>
+        </div>
+
         <a
           href={urlProducto}
           target={urlProducto.startsWith('mailto') ? undefined : '_blank'}
@@ -332,6 +376,25 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
         >
           {resultado.ctaTexto}
         </a>
+
+        {resultado.ctaSecundario && (
+          <a
+            href="mailto:regalametuhistoria@gmail.com"
+            className="block w-full text-center transition-all duration-200 hover:opacity-80"
+            style={{
+              fontFamily: 'var(--font-poppins), sans-serif',
+              fontSize: '15px',
+              fontWeight: 400,
+              color: 'rgba(253,250,246,0.7)',
+              textDecoration: 'underline',
+              textUnderlineOffset: '3px',
+              marginTop: '12px',
+              display: 'block',
+            }}
+          >
+            {resultado.ctaSecundario}
+          </a>
+        )}
 
         {resultado.precio && (
           <p className="text-center" style={{

@@ -29,31 +29,25 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
 
     masterclassGratuita: {
       label: 'MASTERCLASS GRATUITA',
-      titulo: 'Masterclass gratuita — Por qué falla la comunicación en matrimonios católicos',
+      titulo: 'Masterclass gratuita — Por qué falla la comunicación en los matrimonios',
       subtitulo: 'Descubre por qué la comunicación se rompe — y cómo restaurarla desde la fe.',
       caption: 'La masterclass estará disponible muy pronto',
     },
     primerPaso: 'Taller Grabado · Del infierno al cielo en el matrimonio',
-    descripcionProducto: 'Puedes empezar sola, a tu ritmo, sin esperar que él diga sí. Las sesiones 2 y 3 del taller están diseñadas para el trabajo personal que no depende de tu pareja.',
+    descripcionProducto: 'Puedes empezar sola, a tu ritmo, sin esperar que él diga sí. La mayor parte del taller está orientada al trabajo personal en primera instancia — proyecto de vida, manejo de emociones, sanación de heridas. No depende de que él venga.',
     precio: '$32/mes',
     urlProductoKey: 'NEXT_PUBLIC_URL_TALLER',
-    ctaTexto: 'Empieza el Taller Grabado hoy →',
+    ctaTexto: 'Tu camino comienza aquí',
     etiqueta: 'perfil-espera-sola',
     secuencia: 'A',
     recursosSecundarios: {
       titulo: 'TAMBIÉN PARA TI — RECURSOS PARA EL CAMINO EN SOLITARIO',
       recursos: [
         {
-          nombre: 'Taller "Sanando mi Parte"',
-          descripcion: 'Para sanar las heridas propias que no dependen de que él esté listo. 3–4 sesiones en video con workbook incluido. Trabajo interior real, a tu ritmo.',
-          precio: '$97–127 USD · Pago único · Sin suscripción.',
+          nombre: 'Sanando mi Corazón',
+          descripcion: 'Para sanar las heridas propias que no dependen de que él esté listo. Sesiones en video con workbook incluido más meditaciones de acompañamiento espiritual diario. Trabajo interior real, a tu ritmo.',
+          precio: '$57 USD · Pago único · Sin suscripción.',
           url: process.env.NEXT_PUBLIC_URL_TALLER || '#',
-        },
-        {
-          nombre: 'Guía Premium "Penitencia por Amor"',
-          descripcion: 'Audio íntimo narrado por Ana. Acompañamiento espiritual diario para el proceso interior — para quien camina sola pero no sin Dios.',
-          precio: '$27–47 USD · Pago único.',
-          url: '#',
         },
       ],
       ctaTexto: 'Quiero trabajar mi parte →',
@@ -65,7 +59,7 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
     subtitulo: 'La distancia ya no es solo emocional — se volvió el modo de vida',
     colorHeader: '#E1F5EE',
 
-    situacion: 'No hay gritos. No hay peleas épicas. Solo silencio, rutina y la sensación de que el amor se fue apagando sin que nadie lo notara a tiempo. Comparten techo, hijos, cuentas. Pero ya no se cuentan lo que importa. La distancia emocional sin conflicto visible es el patrón más difícil de reconocer — porque por fuera, todo parece estar bien.',
+    situacion: 'No hay gritos. No hay peleas épicas. Solo silencio, rutina, indiferencia y la sensación de que el amor se fue apagando sin que nadie lo notara a tiempo. Comparten techo, hijos, cuentas. Pero ya no se cuentan lo que importa. La distancia emocional sin conflicto visible es el patrón más difícil de reconocer — porque por fuera, todo parece estar bien.',
 
     testimonio: '"Llevábamos siete años siendo compañeros de casa. Nunca peleábamos. Eso nos hacía pensar que estábamos bien. No estábamos bien — estábamos resignados."',
 
@@ -88,15 +82,15 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
 
     masterclassGratuita: {
       label: 'MASTERCLASS GRATUITA',
-      titulo: 'Masterclass gratuita — Por qué falla la comunicación en matrimonios católicos',
+      titulo: 'Masterclass gratuita — Por qué falla la comunicación en los matrimonios',
       subtitulo: 'Descubre por qué la comunicación se rompe — y cómo restaurarla desde la fe.',
       caption: 'La masterclass estará disponible muy pronto',
     },
-    primerPaso: 'Taller en Vivo · Del infierno al cielo en el matrimonio',
-    descripcionProducto: 'La distancia emocional necesita experiencia grupal, no solo contenido grabado. Ver que otras parejas viven lo mismo — y lo están revertiendo — es lo que rompe la resignación.',
-    precio: 'Próxima cohorte — consultar fechas',
+    primerPaso: 'Taller Grabado · Del infierno al cielo en el matrimonio',
+    descripcionProducto: 'Tener una experiencia grupal donde ves a otras parejas viviendo lo mismo abre un camino de esperanza apoyado en comunidad, que busca de nuevo el equilibrio en la relación y rompe la resignación.',
+    precio: '$32/mes',
     urlProductoKey: 'NEXT_PUBLIC_URL_TALLER',
-    ctaTexto: 'Ver fechas del Taller →',
+    ctaTexto: 'Tu camino comienza aquí',
     etiqueta: 'perfil-distancia',
     secuencia: 'A',
   },
@@ -106,38 +100,39 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
     subtitulo: 'Infidelidad, separación, o al borde de una decisión definitiva',
     colorHeader: '#FAECE7',
 
-    situacion: 'Lo que estás viviendo tiene nombre y tiene salida. Pero en este momento probablemente no puedes verla — porque el dolor ocupa todo el espacio. Una infidelidad. Una separación. Una decisión que sientes que no puedes seguir aplazando. Las crisis agudas no se resuelven solas ni con tiempo — necesitan acompañamiento real.',
+    situacion: 'Lo que estás viviendo tiene nombre y tiene salida. Pero en este momento probablemente no puedes verla — porque el dolor ocupa todo el espacio. Una infidelidad, una separación, una decisión que sientes que no puedes seguir aplazando. Las crisis agudas no se resuelven solas ni con tiempo — necesitan acompañamiento real y profesional.',
 
     testimonio: '"Llegué pensando que estaba ahí para decidir si divorciarme. Salí entendiendo que primero necesitaba sanarme a mí. Todo lo demás vino después."',
 
     mensaje: 'No te pedimos que confíes en un método. Te pedimos que confíes en lo que Dios puede hacer con tu historia — exactamente desde donde estás.',
 
-    costoInaccion: 'En una crisis aguda, cada día sin acompañamiento real es un día que el dolor se instala más profundo. No porque seas débil — sino porque el dolor no procesado se convierte en decisiones que después no puedes deshacer.',
+    costoInaccion: 'En una crisis aguda, cada día sin acompañamiento real y profesional es un día que el dolor se instala más profundo. No porque seas débil — sino porque el dolor no procesado se convierte en decisiones que después no puedes deshacer.',
 
     visionFuturo: {
       noPrometemos: 'que el camino sea fácil ni que los resultados sean inmediatos.',
-      prometemos: 'acompañarte con herramientas reales para que puedas ver con claridad lo que hoy el dolor no te deja ver — y tomar las decisiones que merece tu familia.',
+      prometemos: 'acompañarte con herramientas reales y profesionales para que puedas ver con claridad lo que hoy el dolor no te deja ver — y tomar las decisiones que merece tu familia.',
     },
 
     pasosCamino: [
-      { titulo: 'Dejar de cargarlo solo — recibir acompañamiento real', descripcion: 'Hay cosas que no se pueden procesar en soledad. No tienes que hacerlo.' },
+      { titulo: 'Dejar de cargarlo solo — recibir acompañamiento real y profesional', descripcion: 'Hay cosas que no se pueden procesar en soledad. No tienes que hacerlo.' },
       { titulo: 'Entender qué pasó y ponerle nombre al dolor', descripcion: 'El dolor sin nombre ocupa todo el espacio. Nombrarlo lo hace tratable.' },
-      { titulo: 'Recuperar tu paz y tu identidad', descripcion: 'En medio de la crisis, es fácil perder de vista quién eres. Volver a ti es el centro.' },
+      { titulo: 'Recuperar tu paz y tu identidad', descripcion: 'En medio de la crisis, es fácil perder de vista quién eres. Volver a ti es un paso importante.' },
       { titulo: 'Que tu historia sirva — a ti y a tu familia', descripcion: 'Lo que se trabaja con honestidad se convierte en legado, no en cadena.' },
     ],
     destinoCamino: 'Una vida donde el dolor tuvo un propósito',
 
     masterclassGratuita: {
       label: 'MASTERCLASS GRATUITA',
-      titulo: 'Masterclass gratuita — Por qué falla la comunicación en matrimonios católicos',
+      titulo: 'Masterclass gratuita — Por qué falla la comunicación en los matrimonios',
       subtitulo: 'Descubre por qué la comunicación se rompe — y cómo restaurarla desde la fe.',
       caption: 'La masterclass estará disponible muy pronto',
     },
-    primerPaso: 'Escríbenos directamente',
-    descripcionProducto: 'Tu situación requiere acompañamiento real. Antes de recomendarte el camino más adecuado, queremos conocer tu situación. Escríbenos a regalametuhistoria@gmail.com — te respondemos personalmente.',
-    precio: '',
-    urlProductoKey: 'EMAIL_CONTACTO',
-    ctaTexto: 'Escríbenos directamente →',
+    primerPaso: 'Taller Grabado · Del infierno al cielo en el matrimonio',
+    descripcionProducto: 'En este momento, el primer paso es tener algo concreto que hacer. El Taller Grabado está disponible hoy, a tu ritmo, sin fechas. Incluye sesión grupal en vivo semanal con Ana y Alex.\n\nY si sientes que necesitas más acompañamiento profesional e inmediato, escríbenos a regalametuhistoria@gmail.com',
+    precio: '$32/mes',
+    urlProductoKey: 'NEXT_PUBLIC_URL_TALLER',
+    ctaTexto: 'Tu camino comienza aquí',
+    ctaSecundario: 'O escríbenos directamente',
     etiqueta: 'perfil-crisis-aguda',
     secuencia: 'A',
   },
@@ -169,15 +164,15 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
 
     masterclassGratuita: {
       label: 'MASTERCLASS GRATUITA',
-      titulo: 'Masterclass gratuita — Por qué falla la comunicación en matrimonios católicos',
+      titulo: 'Masterclass gratuita — Por qué falla la comunicación en los matrimonios',
       subtitulo: 'Descubre por qué la comunicación se rompe — y cómo restaurarla desde la fe.',
       caption: 'La masterclass estará disponible muy pronto',
     },
     primerPaso: 'Taller Grabado · Del infierno al cielo en el matrimonio',
-    descripcionProducto: 'El lugar perfecto para entender qué es el taller, qué pilares trabaja y si resuena con lo que tu matrimonio necesita — sin la presión de una cohorte en vivo.',
+    descripcionProducto: 'El lugar perfecto para darle una revisadita a tu relación y afinar sus bases, refrescar con herramientas profesionales la dinámica de tu matrimonio. Lo vivirás a tu ritmo y en intimidad.',
     precio: '$32/mes — exploración sin compromiso',
     urlProductoKey: 'NEXT_PUBLIC_URL_TALLER',
-    ctaTexto: 'Explorar el Taller Grabado →',
+    ctaTexto: 'Tu camino comienza aquí',
     etiqueta: 'perfil-prevencion',
     secuencia: 'B',
   },
@@ -187,7 +182,7 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
     subtitulo: 'El dinero no debería ser la puerta que cierra el camino',
     colorHeader: '#FAEEDA',
 
-    situacion: 'Quieres sanar. Eso ya lo tienes claro. Pero los números no cierran — y eso genera una mezcla de frustración y culpa que no debería estar ahí. Tu dolor no vale menos por tener recursos limitados. La barrera económica es real, y nombrarla sin vergüenza es el primer paso para encontrar el camino posible.',
+    situacion: 'Quieres sanar. Eso ya lo tienes claro. Pero las cuentas en tu cabeza no cuadran — y eso genera una mezcla de frustración y culpa que no debería estar ahí. Tu dolor no vale menos por tener recursos limitados. La barrera económica es real, y nombrarla sin vergüenza es el primer paso para encontrar el camino posible.',
 
     testimonio: '"Pensé que el dinero era el obstáculo. Pero cuando encontré una opción accesible, me di cuenta de que el verdadero obstáculo era el miedo. El dinero era la excusa que me dejaba quedarme quieta."',
 
@@ -209,7 +204,7 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
 
     masterclassGratuita: {
       label: 'MASTERCLASS GRATUITA',
-      titulo: 'Masterclass gratuita — Por qué falla la comunicación en matrimonios católicos',
+      titulo: 'Masterclass gratuita — Por qué falla la comunicación en los matrimonios',
       subtitulo: 'Descubre por qué la comunicación se rompe — y cómo restaurarla desde la fe.',
       caption: 'La masterclass estará disponible muy pronto',
     },
@@ -217,16 +212,16 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
     descripcionProducto: 'Menos de lo que cuesta una consulta. Sin fecha fija. Sin compromiso de largo plazo. Y si aún así el dinero es un obstáculo real, escríbenos — hay caminos y formas.',
     precio: '$32/mes',
     urlProductoKey: 'NEXT_PUBLIC_URL_TALLER',
-    ctaTexto: 'Empezar por $32/mes →',
+    ctaTexto: 'Tu camino comienza aquí',
     etiqueta: 'perfil-barrera-economica',
     secuencia: 'B',
     recursosSecundarios: {
       titulo: 'UNA ALTERNATIVA SIN SUSCRIPCIÓN',
       recursos: [
         {
-          nombre: 'Taller "Sanando mi Parte"',
-          descripcion: 'Pago único, sin mensualidades. 3–4 sesiones en video para trabajar tu proceso interior sin comprometerte a una suscripción. Ideal si el $32/mes se siente incierto.',
-          precio: '$97–127 USD · Pago único · Sin suscripción.',
+          nombre: 'Sanando mi Corazón',
+          descripcion: 'Pago único, sin mensualidades. Sesiones en video para trabajar tu proceso interior, incluye meditaciones de acompañamiento espiritual. Ideal si el $32/mes se siente incierto.',
+          precio: '$57 USD · Pago único · Sin suscripción.',
           url: process.env.NEXT_PUBLIC_URL_TALLER || '#',
         },
       ],
@@ -239,11 +234,11 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
     subtitulo: 'Novios o recién casados que eligieron prepararse antes de improvisar',
     colorHeader: '#FBEAF0',
 
-    situacion: 'Estás haciendo exactamente lo que hay que hacer. La mayoría de las parejas que nos escriben — rotas, llorando, durmiendo en habitaciones separadas — no llegaron ahí por falta de amor. Llegaron por falta de preparación. Tú ya lo entendiste. La preparación matrimonial no es un trámite. Es la diferencia entre construir sobre roca o sobre arena.',
+    situacion: 'Estás haciendo exactamente lo que hay que hacer. La mayoría de las parejas que nos escriben — rotas, llorando, durmiendo en habitaciones separadas — no llegaron ahí por falta de amor. Llegaron por falta de preparación. Tú ya lo entendiste, la preparación matrimonial no es un trámite. Es la diferencia entre construir sobre roca o sobre arena.',
 
     testimonio: '"Íbamos a casarnos convencidos de que el amor era suficiente. El proceso nos mostró que el amor es el punto de partida, no la garantía. Salimos con algo mucho más valioso: herramientas."',
 
-    mensaje: 'No te vamos a dar fórmulas. Te vamos a dar herramientas. Y vas a salir entendiendo que ese sí que vas a decir delante del altar no es el final de algo — es el primer día de un camino que vale la pena caminar bien.',
+    mensaje: 'No te vamos a dar fórmulas, te vamos a dar herramientas para que comprendas bien a qué le vas a decir SÍ en el altar y para que este sacramento sea de bendición y no una lucha constante por sostener la felicidad.',
 
     costoInaccion: 'La mayoría de las parejas en crisis nos dicen lo mismo: "Ojalá hubiéramos hecho esto antes de casarnos." Tú todavía puedes.',
 
@@ -253,8 +248,8 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
     },
 
     pasosCamino: [
-      { titulo: 'Conocer las heridas que traes antes de heredárselas a tu familia', descripcion: 'Todos llegamos al matrimonio con historia. La diferencia es si la trabajamos.' },
-      { titulo: 'Aprender a comunicarte bien antes de que duela', descripcion: 'Es más fácil aprender en la calma que en medio de la tormenta.' },
+      { titulo: 'Conocer las heridas que traes antes de heredárselas a tu familia', descripcion: 'La diferencia es si es una historia que hemos sanado.' },
+      { titulo: 'Aprender a comunicarte bien antes de que duela', descripcion: 'Es más fácil aprender en la calma que en medio de la tormenta — y es el mejor regalo que puedes darte antes de casarte.' },
       { titulo: 'Entender lo que prometes el día que digas sí', descripcion: 'El matrimonio no es un sentimiento — es una decisión que se renueva.' },
       { titulo: 'Construir desde el principio algo que dure de verdad', descripcion: 'Los cimientos importan más que cualquier otra cosa.' },
     ],
@@ -262,56 +257,56 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
 
     masterclassGratuita: {
       label: 'MASTERCLASS GRATUITA',
-      titulo: 'Masterclass gratuita — Por qué falla la comunicación en matrimonios católicos',
+      titulo: 'Masterclass gratuita — Por qué falla la comunicación en los matrimonios',
       subtitulo: 'Descubre por qué la comunicación se rompe — y cómo restaurarla desde la fe.',
       caption: 'La masterclass estará disponible muy pronto',
     },
-    primerPaso: 'Taller en Vivo · Del infierno al cielo en el matrimonio',
-    descripcionProducto: 'El mismo taller, otra entrada. No restauración — preparación. La sesión 2 te permite ver las heridas que traes de tu familia de origen antes de heredárselas a la familia que estás por construir.',
-    precio: 'Próxima cohorte — consultar fechas',
+    primerPaso: 'Taller Grabado · Del infierno al cielo en el matrimonio',
+    descripcionProducto: 'Ver el matrimonio desde adentro — con sus heridas, sus patrones y su vocación — antes de prometerte es la mejor preparación que existe. A tu ritmo, en intimidad.',
+    precio: '$32/mes',
     urlProductoKey: 'NEXT_PUBLIC_URL_TALLER',
-    ctaTexto: 'Inscribirme al Taller →',
+    ctaTexto: 'Tu camino comienza aquí',
     etiqueta: 'perfil-novios',
     secuencia: 'C',
   },
 
   G: {
-    nombre: 'Quien está discerniendo su vocación',
-    subtitulo: 'No busca solo una relación — busca un propósito',
+    nombre: 'Los que viven en unión libre',
+    subtitulo: 'Quieren construir algo verdadero — y saben que el camino comienza aquí',
     colorHeader: '#E6F1FB',
 
-    situacion: 'Hay una pregunta que no se hace en voz alta y que te quita el sueño: ¿Es el matrimonio mi camino? Si esa pregunta vive dentro de ti, lo que sientes no es ansiedad — es discernimiento. Y discernir es trabajo serio. La claridad no llega con el tiempo. Se construye con honestidad, con oración y con información real sobre lo que implica la vocación que estás considerando.',
+    situacion: 'Estás aquí porque algo dentro de ti sabe que lo que tienen merece más. Más intención. Más profundidad. Tal vez más compromiso. Vivir juntos sin casarse no es el destino — es el lugar desde donde muchas parejas han comenzado su camino más importante. No hay juicio aquí. Hay una puerta abierta.',
 
-    testimonio: '"Llevaba años con la pregunta dentro sin poder nombrarla. Pensé que el tiempo me daría claridad. Pero la claridad no llega sola — se trabaja."',
+    testimonio: '"Llegamos sin saber muy bien qué buscábamos. Salimos entendiendo que queríamos algo diferente — y que había algo mucho más hermoso esperándonos."',
 
-    mensaje: 'Discernir bien no es decidir rápido. Es entender despacio. Este espacio te da lugar para entender — sin la presión de tener que decidir nada al final.',
+    mensaje: 'No te pedimos que lo tengas todo claro antes de empezar. Te pedimos que des el primer paso con lo que tienes hoy. La claridad no llega antes del proceso — llega dentro de él.',
 
-    costoInaccion: 'El discernimiento aplazado no desaparece — solo se vuelve más pesado. Cada año sin trabajarlo es un año viviendo con una pregunta sin respuesta que ocupa espacio en tu cabeza y en tu corazón.',
+    costoInaccion: 'Esperar la claridad perfecta para dar el paso es lo que más tiempo cuesta. La claridad se construye en el camino, no antes de empezarlo.',
 
     visionFuturo: {
-      noPrometemos: 'darte la respuesta.',
-      prometemos: 'darte la claridad para que puedas encontrarla tú mismo.',
+      noPrometemos: 'que todas las respuestas lleguen de inmediato.',
+      prometemos: 'que al final del proceso tendrán información real y herramientas concretas para tomar la decisión más importante de su vida.',
     },
 
     pasosCamino: [
-      { titulo: 'Ver el matrimonio desde adentro antes de comprometerte', descripcion: 'Entender lo que implica te da información real para discernir.' },
-      { titulo: 'Distinguir lo que quieres tú de lo que quiere Dios para ti', descripcion: 'El discernimiento verdadero empieza donde termina el ruido exterior.' },
-      { titulo: 'Tomar la decisión más importante de tu vida con claridad', descripcion: 'Una vocación elegida desde la libertad interior se vive diferente.' },
+      { titulo: 'Ver el matrimonio desde adentro — no como obligación o tradición, sino como vocación', descripcion: 'Entender lo que implica te da información real para decidir.' },
+      { titulo: 'Reconocer lo que ya están construyendo — y lo que falta', descripcion: 'Nombrar dónde están es el primer paso para saber a dónde van.' },
+      { titulo: 'Tomar la decisión más importante con información real, de las personas correctas', descripcion: 'Una decisión tomada desde la libertad interior se vive diferente.' },
     ],
     destinoCamino: 'Una vocación vivida con convicción, no con duda',
 
     masterclassGratuita: {
       label: 'MASTERCLASS GRATUITA',
-      titulo: 'Masterclass gratuita — Por qué falla la comunicación en matrimonios católicos',
+      titulo: 'Masterclass gratuita — Por qué falla la comunicación en los matrimonios',
       subtitulo: 'Descubre por qué la comunicación se rompe — y cómo restaurarla desde la fe.',
       caption: 'La masterclass estará disponible muy pronto',
     },
     primerPaso: 'Taller Grabado · Del infierno al cielo en el matrimonio',
-    descripcionProducto: 'Ver el matrimonio desde adentro — no como meta cultural, sino como vocación — te da elementos para entender si es tu camino o no. Sin presión. A tu ritmo.',
+    descripcionProducto: 'Ver el matrimonio desde adentro — con sus heridas, su proyecto de vida y su dimensión espiritual — les da elementos reales para saber qué quieren construir juntos. Sin presión. A su ritmo. Incluye sesión grupal en vivo semanal con Ana y Alex.',
     precio: '$32/mes',
     urlProductoKey: 'NEXT_PUBLIC_URL_TALLER',
-    ctaTexto: 'Explorar el Taller Grabado →',
-    etiqueta: 'perfil-discernimiento',
+    ctaTexto: 'Tu camino comienza aquí',
+    etiqueta: 'perfil-union-libre',
     secuencia: 'B',
   },
 
@@ -343,15 +338,15 @@ export const RESULTADOS: Record<PerfilId, ResultadoPerfil> = {
 
     masterclassGratuita: {
       label: 'MASTERCLASS GRATUITA',
-      titulo: 'Masterclass gratuita — Por qué falla la comunicación en matrimonios católicos',
+      titulo: 'Masterclass gratuita — Por qué falla la comunicación en los matrimonios',
       subtitulo: 'Descubre por qué la comunicación se rompe — y cómo restaurarla desde la fe.',
       caption: 'La masterclass estará disponible muy pronto',
     },
-    primerPaso: 'Taller en Vivo · Del infierno al cielo en el matrimonio',
-    descripcionProducto: 'La ruta más completa del ecosistema RTH. No como solución a un problema — como misión. Su matrimonio puede convertirse en testimonio que lleve a otros al cielo.',
-    precio: 'Próxima cohorte — consultar fechas',
+    primerPaso: 'Taller Grabado · Del infierno al cielo en el matrimonio',
+    descripcionProducto: 'No como solución a un problema — sino como fortalecimiento del matrimonio para ser misión. Las herramientas que restauran un matrimonio en crisis son exactamente las que edifican uno que ya funciona. Empieza aquí — a tu ritmo.',
+    precio: '$32/mes',
     urlProductoKey: 'NEXT_PUBLIC_URL_TALLER',
-    ctaTexto: 'Inscribirme al Taller →',
+    ctaTexto: 'Tu camino comienza aquí',
     etiqueta: 'perfil-santidad',
     secuencia: 'C',
   },

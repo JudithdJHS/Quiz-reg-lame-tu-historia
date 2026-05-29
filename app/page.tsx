@@ -104,6 +104,7 @@ export default function Bienvenida() {
               Otros llevan años esperando que algo cambie.
               Algunos no saben si esto tiene solución…
               y otros quieren construir algo santo desde el principio.
+              Al terminar, recibirás tu camino personalizado — con el primer paso concreto diseñado para donde estás hoy.
             </motion.p>
 
             {/* Frase italic dorada */}
