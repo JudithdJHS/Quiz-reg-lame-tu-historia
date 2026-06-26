@@ -14,7 +14,7 @@ export default function Bienvenida() {
       {/* ── COL IZQUIERDA — Video ─────────────────────────────── */}
       <div className="hidden md:block md:w-1/2 h-full bg-[#3D3520]">
         <video
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          style={{ width: '100%', height: '100%', objectFit: 'contain', backgroundColor: '#3D3520' }}
           autoPlay
           muted
           loop
