@@ -91,7 +91,6 @@ export default function ResultadoPage() {
   const router = useRouter()
   const [resultado, setResultado] = useState<ResultadoPerfil | null>(null)
   const [nombre, setNombre] = useState('')
-  const [q3, setQ3] = useState<string | undefined>(undefined)
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -123,7 +122,6 @@ export default function ResultadoPage() {
 
     setResultado(r)
     setNombre(sesion.nombre || '')
-    setQ3(sesion.q3)
     setTimeout(() => setVisible(true), 80)
   }, [router])
 
@@ -171,7 +169,7 @@ export default function ResultadoPage() {
         }}
       >
         <div className="px-4">
-          <ResultadoCard resultado={resultado} nombre={nombre} q3={q3} />
+          <ResultadoCard resultado={resultado} nombre={nombre} />
         </div>
 
         {/* EXTRACTO VIDEO — Sesión 2 */}
@@ -227,15 +225,6 @@ export default function ResultadoPage() {
               boxShadow: '0 4px 24px rgba(61,53,32,0.12)',
             }}>
 
-              {/* OPCIÓN A: YouTube — descomenta y pon el ID cuando tengas el video */}
-              {/* <iframe
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
-                src="https://www.youtube.com/embed/VIDEO_ID?rel=0&modestbranding=1"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              /> */}
-
-              {/* PLACEHOLDER — elimina este bloque cuando actives el video */}
               <div style={{
                 position: 'absolute',
                 inset: 0,
@@ -246,13 +235,9 @@ export default function ResultadoPage() {
                 gap: '16px',
               }}>
                 <div style={{
-                  width: '64px',
-                  height: '64px',
-                  borderRadius: '50%',
-                  background: '#C49E50',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  width: '64px', height: '64px', borderRadius: '50%',
+                  background: '#C49E50', display: 'flex',
+                  alignItems: 'center', justifyContent: 'center',
                 }}>
                   <svg width="24" height="24" fill="#FDFAF6" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z"/>

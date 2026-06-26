@@ -11,28 +11,17 @@ export default function Bienvenida() {
   return (
     <main className="flex flex-col md:flex-row w-full min-h-screen md:h-screen">
 
-      {/* ── COL IZQUIERDA — Video placeholder (solo desktop) ─── */}
-      {/* Para embed Vimeo: reemplazar todo este div por:
-          <iframe src="https://player.vimeo.com/video/[ID]?autoplay=1&muted=1&loop=1&background=1"
-            className="hidden md:block w-1/2 h-full border-none" allow="autoplay; fullscreen" />  */}
-      <div className="hidden md:flex md:w-1/2 h-full bg-[#3D3520] flex-col items-center justify-center gap-4">
-        <div style={{
-          width: '72px', height: '72px', borderRadius: '50%',
-          border: '2px solid #C49E50', display: 'flex',
-          alignItems: 'center', justifyContent: 'center', opacity: 0.85,
-        }}>
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-            <path d="M10 8l12 6-12 6V8z" fill="#C49E50" />
-          </svg>
-        </div>
-        <div style={{ textAlign: 'center', padding: '0 24px' }}>
-          <p style={{ fontFamily: 'var(--font-playfair), serif', fontStyle: 'italic', fontSize: '1.125rem', color: '#FDFAF6', lineHeight: '1.5', marginBottom: '8px' }}>
-            Ana y Alex
-          </p>
-          <p style={{ fontFamily: 'var(--font-poppins), sans-serif', fontSize: '0.75rem', color: 'rgba(253,250,246,0.4)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-            Video próximamente
-          </p>
-        </div>
+      {/* ── COL IZQUIERDA — Video ─────────────────────────────── */}
+      <div className="hidden md:block md:w-1/2 h-full bg-[#3D3520]">
+        <video
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="https://www.regalametuhistoria.com/wp-content/uploads/2026/06/Quiz.mp4" type="video/mp4" />
+        </video>
       </div>
 
       {/* ── COL DERECHA — Contenido (full en mobile, 1/2 en desktop) */}

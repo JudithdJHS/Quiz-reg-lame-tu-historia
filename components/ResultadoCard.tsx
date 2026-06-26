@@ -3,11 +3,11 @@
 import { motion } from 'motion/react'
 import { ResultadoPerfil } from '@/types/quiz'
 import RutaCamino from './RutaCamino'
+import { URL_TALLER, URL_MEMBRESIA } from '@/lib/urls'
 
 interface ResultadoCardProps {
   resultado: ResultadoPerfil
   nombre: string
-  q3?: string
 }
 
 const FADE_UP = (delay = 0) => ({
@@ -28,11 +28,11 @@ function splitNombre(nombre: string): { regular: string; italic: string } {
   }
 }
 
-export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardProps) {
+export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps) {
   const urlProducto =
     resultado.urlProductoKey === 'EMAIL_CONTACTO'
-      ? 'mailto:regalametuhistoria@gmail.com'
-      : process.env.NEXT_PUBLIC_URL_TALLER || '#'
+      ? 'mailto:hola@regalametuhistoria.com'
+      : URL_TALLER
 
   const { regular: tituloRegular, italic: tituloItalic } = splitNombre(resultado.nombre)
 
@@ -340,7 +340,7 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
             Tu siguiente paso es la Membresía <em>Un Camino para Sanar</em>. También incluye sesión grupal en vivo semanal con Ana y Alex.
           </p>
           <a
-            href={process.env.NEXT_PUBLIC_URL_MEMBRESIA || '#'}
+            href={URL_MEMBRESIA}
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -408,235 +408,6 @@ export default function ResultadoCard({ resultado, nombre, q3 }: ResultadoCardPr
           </p>
         )}
       </motion.div>
-
-      {/* ── RECURSOS SECUNDARIOS — Perfil A y E ───────────────── */}
-      {resultado.recursosSecundarios && (
-        <motion.div
-          style={{
-            marginTop: '16px',
-            padding: '32px 24px',
-            backgroundColor: '#FDFAF6',
-            borderRadius: '12px',
-            border: '1px solid rgba(196,158,80,0.18)',
-          }}
-          {...FADE_UP()}
-        >
-          <p style={{
-            fontFamily: 'var(--font-poppins), sans-serif',
-            fontSize: '0.6875rem',
-            fontWeight: 700,
-            color: '#C49E50',
-            textTransform: 'uppercase',
-            letterSpacing: '0.15em',
-            marginBottom: '20px',
-          }}>
-            {resultado.recursosSecundarios.titulo}
-          </p>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            {resultado.recursosSecundarios.recursos.map((r, i) => (
-              <div key={i} style={{
-                padding: '20px',
-                backgroundColor: '#F5EDE0',
-                borderRadius: '10px',
-                border: '1px solid rgba(196,158,80,0.2)',
-              }}>
-                <p style={{
-                  fontFamily: 'var(--font-playfair), serif',
-                  fontStyle: 'italic',
-                  fontSize: '1.0625rem',
-                  fontWeight: 700,
-                  color: '#3D3520',
-                  marginBottom: '6px',
-                }}>
-                  {r.nombre}
-                </p>
-                <p style={{
-                  fontFamily: 'var(--font-poppins), sans-serif',
-                  fontSize: '0.875rem',
-                  color: '#BD886A',
-                  lineHeight: '1.6',
-                  marginBottom: '10px',
-                }}>
-                  {r.descripcion}
-                </p>
-                <p style={{
-                  fontFamily: 'var(--font-poppins), sans-serif',
-                  fontSize: '0.8125rem',
-                  color: '#6B783E',
-                  fontWeight: 600,
-                  marginBottom: '12px',
-                }}>
-                  {r.precio}
-                </p>
-                <a
-                  href={r.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    fontFamily: 'var(--font-poppins), sans-serif',
-                    fontSize: '0.875rem',
-                    color: '#6B783E',
-                    fontWeight: 600,
-                    textDecoration: 'underline',
-                    textUnderlineOffset: '3px',
-                  }}
-                >
-                  {i === 0 ? resultado.recursosSecundarios!.ctaTexto : 'Escuchar la guía →'}
-                </a>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-      )}
-
-      {/* ── BLOQUE CONDICIONAL PERFIL C según Q3 ─────────────── */}
-      {resultado.etiqueta === 'perfil-crisis-aguda' && q3 === 'C' && (
-        <motion.div
-          style={{
-            marginTop: '16px',
-            padding: '32px 24px',
-            backgroundColor: '#FDFAF6',
-            borderRadius: '12px',
-            border: '1px solid rgba(196,158,80,0.18)',
-          }}
-          {...FADE_UP()}
-        >
-          <p style={{
-            fontFamily: 'var(--font-poppins), sans-serif',
-            fontSize: '0.6875rem',
-            fontWeight: 700,
-            color: '#C49E50',
-            textTransform: 'uppercase',
-            letterSpacing: '0.15em',
-            marginBottom: '14px',
-          }}>
-            Entrada inmediata
-          </p>
-          <p style={{
-            fontFamily: 'var(--font-poppins), sans-serif',
-            color: '#3D3520',
-            fontSize: '0.9375rem',
-            lineHeight: '1.75',
-            marginBottom: '16px',
-          }}>
-            Mientras esperas la próxima cohorte del taller, tenemos un espacio creado exactamente para lo que estás viviendo:
-          </p>
-          <p style={{
-            fontFamily: 'var(--font-playfair), serif',
-            fontStyle: 'italic',
-            fontSize: '1.125rem',
-            fontWeight: 700,
-            color: '#3D3520',
-            marginBottom: '8px',
-          }}>
-            Taller "Infidelidad: sanar y reconstruir"
-          </p>
-          <p style={{
-            fontFamily: 'var(--font-poppins), sans-serif',
-            fontSize: '0.875rem',
-            color: '#BD886A',
-            lineHeight: '1.6',
-            marginBottom: '8px',
-          }}>
-            Un proceso corto y muy estructurado, con workbook descargable. No reemplaza el taller en vivo — lo prepara.
-          </p>
-          <p style={{
-            fontFamily: 'var(--font-poppins), sans-serif',
-            fontSize: '0.8125rem',
-            color: '#6B783E',
-            fontWeight: 600,
-            marginBottom: '16px',
-          }}>
-            $97–127 USD · Pago único
-          </p>
-          <a
-            href={process.env.NEXT_PUBLIC_URL_TALLER || '#'}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full text-center font-semibold transition-all duration-200 hover:opacity-90"
-            style={{
-              fontFamily: 'var(--font-poppins), sans-serif',
-              fontSize: '1rem',
-              backgroundColor: '#6B783E',
-              color: '#FDFAF6',
-              padding: '15px 24px',
-              borderRadius: '8px',
-            }}
-          >
-            Quiero empezar aquí →
-          </a>
-        </motion.div>
-      )}
-
-      {resultado.etiqueta === 'perfil-crisis-aguda' && q3 === 'P' && (
-        <motion.div
-          style={{
-            marginTop: '16px',
-            padding: '32px 24px',
-            backgroundColor: '#FDFAF6',
-            borderRadius: '12px',
-            border: '1px solid rgba(196,158,80,0.18)',
-          }}
-          {...FADE_UP()}
-        >
-          <p style={{
-            fontFamily: 'var(--font-poppins), sans-serif',
-            fontSize: '0.6875rem',
-            fontWeight: 700,
-            color: '#C49E50',
-            textTransform: 'uppercase',
-            letterSpacing: '0.15em',
-            marginBottom: '14px',
-          }}>
-            Entrada inmediata
-          </p>
-          <p style={{
-            fontFamily: 'var(--font-poppins), sans-serif',
-            color: '#3D3520',
-            fontSize: '0.9375rem',
-            lineHeight: '1.75',
-            marginBottom: '16px',
-          }}>
-            Hay un taller creado para este dolor específico. Es el lugar más honesto donde hemos podido hablar de esto.
-          </p>
-          <p style={{
-            fontFamily: 'var(--font-playfair), serif',
-            fontStyle: 'italic',
-            fontSize: '1.125rem',
-            fontWeight: 700,
-            color: '#3D3520',
-            marginBottom: '8px',
-          }}>
-            Taller "Pornografía en el matrimonio"
-          </p>
-          <p style={{
-            fontFamily: 'var(--font-poppins), sans-serif',
-            fontSize: '0.8125rem',
-            color: '#6B783E',
-            fontWeight: 600,
-            marginBottom: '16px',
-          }}>
-            $97–127 USD · Pago único
-          </p>
-          <a
-            href={process.env.NEXT_PUBLIC_URL_TALLER || '#'}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full text-center font-semibold transition-all duration-200 hover:opacity-90"
-            style={{
-              fontFamily: 'var(--font-poppins), sans-serif',
-              fontSize: '1rem',
-              backgroundColor: '#6B783E',
-              color: '#FDFAF6',
-              padding: '15px 24px',
-              borderRadius: '8px',
-            }}
-          >
-            Ver este taller →
-          </a>
-        </motion.div>
-      )}
 
     </div>
   )
