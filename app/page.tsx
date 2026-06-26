@@ -20,25 +20,26 @@ export default function Bienvenida() {
     <main className="flex flex-col md:flex-row w-full min-h-screen md:h-screen">
 
       {/* ── COL IZQUIERDA — Video ─────────────────────────────── */}
-      <div className="hidden md:block md:w-1/2 relative overflow-hidden bg-[#3D3520]" style={{ height: '100vh' }}>
-        <video
-          ref={videoRef}
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }}
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src="/Quiz.mp4" type="video/mp4" />
-        </video>
+      <div className="hidden md:flex md:w-1/2 items-center justify-center bg-[#3D3520]" style={{ height: '100vh' }}>
+        <div style={{ height: '100%', aspectRatio: '9/16', position: 'relative', overflow: 'hidden' }}>
+          <video
+            ref={videoRef}
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src="/Quiz.mp4" type="video/mp4" />
+          </video>
 
         {/* Botón mute/unmute */}
         <button
           onClick={toggleMute}
           style={{
             position: 'absolute',
-            bottom: '20px',
-            right: '20px',
+            bottom: '16px',
+            right: '16px',
             background: 'rgba(61,53,32,0.65)',
             border: '1px solid rgba(253,250,246,0.3)',
             borderRadius: '50%',
@@ -66,6 +67,7 @@ export default function Bienvenida() {
             </svg>
           )}
         </button>
+        </div>
       </div>
 
       {/* ── COL DERECHA — Contenido (full en mobile, 1/2 en desktop) */}
