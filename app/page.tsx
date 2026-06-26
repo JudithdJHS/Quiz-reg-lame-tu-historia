@@ -20,7 +20,7 @@ export default function Bienvenida() {
     <main className="flex flex-col md:flex-row w-full min-h-screen md:h-screen">
 
       {/* ── COL IZQUIERDA — Video ─────────────────────────────── */}
-      <div className="hidden md:block md:w-1/2 relative overflow-hidden" style={{ height: '100vh' }}>
+      <div className="hidden md:block relative overflow-hidden flex-shrink-0" style={{ height: '100vh', width: '35%' }}>
         <video
           ref={videoRef}
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%' }}
@@ -70,7 +70,7 @@ export default function Bienvenida() {
 
       {/* ── COL DERECHA — Contenido (full en mobile, 1/2 en desktop) */}
       <motion.div
-        className="w-full md:w-1/2 flex flex-col bg-[#F5EDE0]"
+        className="w-full flex flex-col bg-[#F5EDE0]" style={{ flex: 1 }}
         style={{ minHeight: 0 }}
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
