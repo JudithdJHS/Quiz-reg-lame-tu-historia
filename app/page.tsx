@@ -23,7 +23,7 @@ export default function Bienvenida() {
       <div className="hidden md:block md:w-1/2 relative overflow-hidden bg-[#3D3520]" style={{ height: '100vh' }}>
         <video
           ref={videoRef}
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
           autoPlay
           muted
           loop
