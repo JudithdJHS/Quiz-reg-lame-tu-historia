@@ -1,28 +1,71 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'motion/react'
 
 export default function Bienvenida() {
   const [imgError, setImgError] = useState(false)
+  const [muted, setMuted] = useState(true)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  function toggleMute() {
+    if (!videoRef.current) return
+    videoRef.current.muted = !videoRef.current.muted
+    setMuted(videoRef.current.muted)
+  }
 
   return (
     <main className="flex flex-col md:flex-row w-full min-h-screen md:h-screen">
 
       {/* ── COL IZQUIERDA — Video ─────────────────────────────── */}
-      <div className="hidden md:block md:w-1/2 h-full bg-[#3D3520]">
+      <div className="hidden md:block md:w-1/2 h-full bg-[#3D3520] relative overflow-hidden">
         <video
-          style={{ width: '100%', height: '100%', objectFit: 'contain', backgroundColor: '#3D3520' }}
+          ref={videoRef}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
           autoPlay
           muted
           loop
           playsInline
-          controls
         >
           <source src="/Quiz.mp4" type="video/mp4" />
         </video>
+
+        {/* Botón mute/unmute */}
+        <button
+          onClick={toggleMute}
+          style={{
+            position: 'absolute',
+            bottom: '20px',
+            right: '20px',
+            background: 'rgba(61,53,32,0.65)',
+            border: '1px solid rgba(253,250,246,0.3)',
+            borderRadius: '50%',
+            width: '44px',
+            height: '44px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            backdropFilter: 'blur(4px)',
+          }}
+          aria-label={muted ? 'Activar sonido' : 'Silenciar'}
+        >
+          {muted ? (
+            <svg width="20" height="20" fill="none" stroke="#FDFAF6" strokeWidth="1.8" viewBox="0 0 24 24">
+              <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+              <line x1="23" y1="9" x2="17" y2="15"/>
+              <line x1="17" y1="9" x2="23" y2="15"/>
+            </svg>
+          ) : (
+            <svg width="20" height="20" fill="none" stroke="#FDFAF6" strokeWidth="1.8" viewBox="0 0 24 24">
+              <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+            </svg>
+          )}
+        </button>
       </div>
 
       {/* ── COL DERECHA — Contenido (full en mobile, 1/2 en desktop) */}
