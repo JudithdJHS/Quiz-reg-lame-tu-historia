@@ -20,7 +20,7 @@ export default function Bienvenida() {
     <main className="flex flex-col md:flex-row w-full min-h-screen md:h-screen">
 
       {/* ── COL IZQUIERDA — Video ─────────────────────────────── */}
-      <div className="hidden md:block md:w-1/2 h-full bg-[#3D3520] relative overflow-hidden">
+      <div className="hidden md:block md:w-1/2 relative overflow-hidden bg-[#3D3520]" style={{ height: '100vh' }}>
         <video
           ref={videoRef}
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
