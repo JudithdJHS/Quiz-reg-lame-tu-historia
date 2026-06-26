@@ -19,6 +19,7 @@ export default function Bienvenida() {
           muted
           loop
           playsInline
+          controls
         >
           <source src="/Quiz.mp4" type="video/mp4" />
         </video>
