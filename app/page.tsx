@@ -20,7 +20,7 @@ export default function Bienvenida() {
           loop
           playsInline
         >
-          <source src="https://www.regalametuhistoria.com/wp-content/uploads/2026/06/Quiz.mp4" type="video/mp4" />
+          <source src="/Quiz.mp4" type="video/mp4" />
         </video>
       </div>
 
