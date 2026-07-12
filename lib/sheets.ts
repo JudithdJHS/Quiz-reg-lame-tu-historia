@@ -142,9 +142,14 @@ export async function actualizarLead(email: string, campos: ActualizarLeadCampos
   const nuevaGestion = campos.registrarGestion ? ahora : lead.ultimaGestion
 
   let nuevasNotas = lead.notas
+  const fecha = ahora.slice(0, 10)
+  const autor = campos.admin ? ` (${campos.admin})` : ''
+
   if (campos.nota && campos.nota.trim()) {
-    const fecha = ahora.slice(0, 10)
-    const linea = `[${fecha}] ${campos.nota.trim()}`
+    const linea = `[${fecha}]${autor} ${campos.nota.trim()}`
+    nuevasNotas = nuevasNotas ? `${nuevasNotas}\n${linea}` : linea
+  } else if (campos.registrarGestion && campos.admin) {
+    const linea = `[${fecha}]${autor} Gestión registrada`
     nuevasNotas = nuevasNotas ? `${nuevasNotas}\n${linea}` : linea
   }
 

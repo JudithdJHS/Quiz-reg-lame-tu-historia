@@ -135,10 +135,16 @@ CRM ligero de seguimiento para el equipo RTH. La base de datos es el mismo Googl
 
 | Variable | Descripción |
 |---|---|
-| `ADMIN_PASSWORD` | Clave de acceso al panel `/admin` |
+| `ADMIN_USERS` | Multi-admin: `"Nombre:clave, Nombre2:clave2"`. Cada persona entra con su propia clave y sus gestiones quedan firmadas con su nombre en las notas |
+| `ADMIN_PASSWORD` | Fallback de un solo admin sin nombre propio (se loguea como "Equipo"). Solo se usa si `ADMIN_USERS` no está configurada |
 | `ADMIN_SESSION_SECRET` | Secreto aleatorio largo (32+ caracteres) para firmar la cookie de sesión |
 
 La sesión dura 8 horas (cookie httpOnly firmada). Sin sesión válida, `/admin/*` redirige al login y `/api/admin/*` responde 401.
+
+**Para añadir o quitar un administrador**, edita `ADMIN_USERS` en Vercel y haz redeploy — no requiere cambios de código:
+```
+ADMIN_USERS=Yudit:clave-de-yudit, Ana:clave-de-ana, Alex:clave-de-alex
+```
 
 ### Columnas nuevas en el Sheet
 

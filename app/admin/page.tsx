@@ -21,11 +21,12 @@ export default function AdminLogin() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ password }),
       })
-      if (res.ok) {
+      const data = await res.json().catch(() => null)
+      if (res.ok && data?.nombre) {
+        sessionStorage.setItem('rth_admin_nombre', data.nombre)
         router.push('/admin/pipeline')
         return
       }
-      const data = await res.json().catch(() => null)
       setError(data?.error || 'Clave incorrecta')
     } catch {
       setError('Error de conexión. Reintenta.')

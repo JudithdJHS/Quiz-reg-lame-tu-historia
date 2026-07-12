@@ -202,6 +202,17 @@ export default function PipelinePage() {
   const [filtroTexto, setFiltroTexto] = useState('')
   const [filtroEstado, setFiltroEstado] = useState<'todos' | EstadoLead>('todos')
   const [tabActivo, setTabActivo] = useState<EstadoLead>('lead')
+  const [nombreAdmin, setNombreAdmin] = useState('')
+
+  useEffect(() => {
+    setNombreAdmin(sessionStorage.getItem('rth_admin_nombre') || '')
+  }, [])
+
+  const cerrarSesion = useCallback(async () => {
+    sessionStorage.removeItem('rth_admin_nombre')
+    await fetch('/api/admin/logout', { method: 'POST' }).catch(() => {})
+    router.replace('/admin')
+  }, [router])
 
   const cargar = useCallback(async () => {
     setCargando(true)
@@ -285,6 +296,18 @@ export default function PipelinePage() {
         >
           {cargando ? 'Cargando…' : 'Recargar'}
         </button>
+        {nombreAdmin && (
+          <span style={{ fontFamily: fuente, fontSize: '0.75rem', color: '#BD886A' }}>
+            Sesión: <strong style={{ color: '#3D3520' }}>{nombreAdmin}</strong>
+            {' · '}
+            <button
+              onClick={cerrarSesion}
+              style={{ fontFamily: fuente, fontSize: '0.75rem', color: '#BD886A', textDecoration: 'underline', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+            >
+              Cerrar sesión
+            </button>
+          </span>
+        )}
         <div style={{ display: 'flex', gap: '8px', marginLeft: 'auto', flexWrap: 'wrap' }}>
           <input
             type="text"

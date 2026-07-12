@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { actualizarLead } from '@/lib/sheets'
-import { sesionValida } from '@/lib/admin-auth'
+import { identidadSesion } from '@/lib/admin-auth'
 import { ESTADOS_LEAD, type EstadoLead } from '@/types/admin'
 
 export const dynamic = 'force-dynamic'
@@ -13,7 +13,8 @@ interface ActualizarBody {
 }
 
 export async function POST(req: NextRequest) {
-  if (!(await sesionValida(req))) {
+  const nombreAdmin = await identidadSesion(req)
+  if (!nombreAdmin) {
     return NextResponse.json({ ok: false, error: 'No autorizado' }, { status: 401 })
   }
 
@@ -42,6 +43,7 @@ export async function POST(req: NextRequest) {
       estado: body.estado as EstadoLead | undefined,
       nota: body.nota,
       registrarGestion: body.registrarGestion,
+      admin: nombreAdmin,
     })
     return NextResponse.json({ ok: true, lead })
   } catch (error) {

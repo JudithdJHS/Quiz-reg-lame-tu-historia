@@ -4,8 +4,8 @@ import { ADMIN_COOKIE, validarToken } from '@/lib/admin-auth'
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl
 
-  // El login es la única ruta admin pública
-  if (pathname === '/api/admin/login') {
+  // Login y logout son las únicas rutas admin públicas
+  if (pathname === '/api/admin/login' || pathname === '/api/admin/logout') {
     return NextResponse.next()
   }
 

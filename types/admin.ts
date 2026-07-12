@@ -34,4 +34,5 @@ export interface ActualizarLeadCampos {
   estado?: EstadoLead
   nota?: string
   registrarGestion?: boolean
+  admin?: string
 }
