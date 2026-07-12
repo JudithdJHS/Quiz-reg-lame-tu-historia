@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { RESULTADOS } from '@/lib/resultados-data'
+import { URL_TALLER } from '@/lib/urls'
 import ResultadoCard from '@/components/ResultadoCard'
 import type { QuizSesion, PerfilId, ResultadoPerfil } from '@/types/quiz'
 
@@ -266,8 +267,8 @@ export default function ResultadoPage() {
               }}>
                 Esto es solo el inicio de tu camino.
               </p>
-              <a 
-                href="https://www.regalametuhistoria.com/?utm_source=quiz&utm_medium=resultado&utm_content=cta_video"
+              <a
+                href={`${URL_TALLER}${URL_TALLER.includes('?') ? '&' : '?'}utm_source=quiz&utm_medium=resultado&utm_content=cta_video`}
                 style={{
                   display: 'inline-block',
                   background: '#6B783E',

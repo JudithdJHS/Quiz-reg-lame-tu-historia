@@ -124,3 +124,38 @@ Las fechas del Taller en Vivo aparecen en el campo `precio` de los perfiles B, F
 ```typescript
 precio: 'Próxima cohorte — 15 de junio 2026',
 ```
+
+---
+
+## Panel /admin
+
+CRM ligero de seguimiento para el equipo RTH. La base de datos es el mismo Google Sheet "Leads Quiz RTH".
+
+### Variables de entorno nuevas
+
+| Variable | Descripción |
+|---|---|
+| `ADMIN_PASSWORD` | Clave de acceso al panel `/admin` |
+| `ADMIN_SESSION_SECRET` | Secreto aleatorio largo (32+ caracteres) para firmar la cookie de sesión |
+
+La sesión dura 8 horas (cookie httpOnly firmada). Sin sesión válida, `/admin/*` redirige al login y `/api/admin/*` responde 401.
+
+### Columnas nuevas en el Sheet
+
+Añadir estas 4 columnas al final de la hoja **Leads Quiz RTH** (después de UTM_Campaign):
+
+| Columna | Letra | Contenido |
+|---|---|---|
+| `Telefono` | M | WhatsApp del lead (se completa solo desde los eventos de checkout si existe) |
+| `Estado` | N | Estado del pipeline: `lead`, `checkout-iniciado`, `pago-fallido`, `abandonado`, `pagado`, `alumno`, `miembro` |
+| `UltimaGestion` | O | Timestamp ISO de la última gestión registrada |
+| `Notas` | P | Historial de notas, una por línea con fecha `[YYYY-MM-DD]` |
+
+Si `Estado` está vacío, el panel lo deriva automáticamente de la hoja "Eventos Checkout RTH" (pago aprobado → pagado, etc.). Un estado escrito manualmente siempre tiene prioridad.
+
+### Uso
+
+1. Entrar a `/admin` con la clave
+2. `/admin/pipeline` muestra las columnas del embudo con los leads
+3. Cada tarjeta permite: abrir WhatsApp con mensaje según estado, registrar gestión con nota, y mover de estado con el selector
+4. Las tarjetas con más de 3 días sin gestión se resaltan en dorado

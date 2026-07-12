@@ -3,7 +3,7 @@
 import { motion } from 'motion/react'
 import { ResultadoPerfil } from '@/types/quiz'
 import RutaCamino from './RutaCamino'
-import { URL_TALLER, URL_MEMBRESIA } from '@/lib/urls'
+import { URL_TALLER, URL_MEMBRESIA, URL_AGENDA_1_1 } from '@/lib/urls'
 
 interface ResultadoCardProps {
   resultado: ResultadoPerfil
@@ -379,7 +379,7 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
 
         {resultado.ctaSecundario && (
           <a
-            href="mailto:regalametuhistoria@gmail.com"
+            href="mailto:hola@regalametuhistoria.com"
             className="block w-full text-center transition-all duration-200 hover:opacity-80"
             style={{
               fontFamily: 'var(--font-poppins), sans-serif',
@@ -396,18 +396,73 @@ export default function ResultadoCard({ resultado, nombre }: ResultadoCardProps)
           </a>
         )}
 
-        {resultado.precio && (
-          <p className="text-center" style={{
-            fontFamily: 'var(--font-poppins), sans-serif',
-            color: 'rgba(253,250,246,0.45)',
-            fontSize: '0.8125rem',
-            marginTop: '10px',
-            letterSpacing: '0.02em',
-          }}>
-            {resultado.precio}
-          </p>
-        )}
       </motion.div>
+
+      {/* ── SESIÓN 1:1 — solo perfil crisis aguda ─────────────── */}
+      {resultado.etiqueta === 'perfil-crisis-aguda' && URL_AGENDA_1_1 && (
+        <motion.div
+          style={{
+            borderRadius: '12px',
+            padding: 'clamp(28px, 5vw, 40px) clamp(24px, 5vw, 36px)',
+            backgroundColor: '#FDFAF6',
+            border: '1.5px solid #C49E50',
+            marginTop: '16px',
+            textAlign: 'center',
+          }}
+          {...FADE_UP()}
+        >
+          <p style={{
+            fontFamily: 'var(--font-poppins), sans-serif',
+            fontSize: '10px',
+            fontWeight: 700,
+            color: '#C49E50',
+            textTransform: 'uppercase',
+            letterSpacing: '3px',
+            marginBottom: '14px',
+          }}>
+            ¿Necesitas hablar con alguien ahora?
+          </p>
+          <p style={{
+            fontFamily: 'var(--font-playfair), serif',
+            fontStyle: 'italic',
+            fontSize: '1.25rem',
+            color: '#3D3520',
+            lineHeight: 1.5,
+            marginBottom: '10px',
+          }}>
+            Agenda una sesión 1:1 con Ana y Alex
+          </p>
+          <p style={{
+            fontFamily: 'var(--font-poppins), sans-serif',
+            fontSize: '15px',
+            color: '#8A7E6E',
+            lineHeight: 1.65,
+            marginBottom: '24px',
+          }}>
+            Por lo que respondiste, tu situación merece acompañamiento personal — no solo
+            contenido. Elige el día y la hora que te sirvan, y hablamos directamente contigo.
+          </p>
+          <a
+            href={URL_AGENDA_1_1}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
+            style={{
+              fontFamily: 'var(--font-poppins), sans-serif',
+              fontSize: '16px',
+              fontWeight: 700,
+              letterSpacing: '0.5px',
+              backgroundColor: '#C49E50',
+              color: '#FDFAF6',
+              padding: '16px 36px',
+              borderRadius: '8px',
+              textDecoration: 'none',
+            }}
+          >
+            Reservar mi sesión 1:1 →
+          </a>
+        </motion.div>
+      )}
 
     </div>
   )
