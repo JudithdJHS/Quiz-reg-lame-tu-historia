@@ -2,7 +2,9 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import { ESTADOS_LEAD, type EstadoLead, type LeadCRM } from '@/types/admin'
+import { diasDesde } from '@/lib/admin-utils'
 
 const NOMBRES_ESTADO: Record<EstadoLead, string> = {
   'lead': 'Leads',
@@ -30,13 +32,6 @@ function mensajeWhatsApp(estado: EstadoLead, nombre: string): string {
     default:
       return `Hola ${primerNombre}, gracias por hacer el quiz de Regálame tu Historia. ¿Pudiste ver tu resultado? Estamos aquí para lo que necesites.`
   }
-}
-
-function diasDesde(fechaIso: string): number | null {
-  if (!fechaIso) return null
-  const fecha = new Date(fechaIso).getTime()
-  if (!Number.isFinite(fecha)) return null
-  return Math.floor((Date.now() - fecha) / 86400000)
 }
 
 const fuente = 'var(--font-poppins), sans-serif'
@@ -296,6 +291,12 @@ export default function PipelinePage() {
         >
           {cargando ? 'Cargando…' : 'Recargar'}
         </button>
+        <Link
+          href="/admin/dashboard"
+          style={{ fontFamily: fuente, fontSize: '0.75rem', fontWeight: 600, color: '#6B783E', border: '1px solid #6B783E', padding: '5px 12px', borderRadius: '6px', textDecoration: 'none' }}
+        >
+          Dashboard
+        </Link>
         {nombreAdmin && (
           <span style={{ fontFamily: fuente, fontSize: '0.75rem', color: '#BD886A' }}>
             Sesión: <strong style={{ color: '#3D3520' }}>{nombreAdmin}</strong>
