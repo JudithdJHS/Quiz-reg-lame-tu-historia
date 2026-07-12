@@ -17,7 +17,7 @@ export function parseGestionesPorAdmin(notasPorLead: string[]): Map<string, Gest
   const stats = new Map<string, GestionAdmin>()
   for (const notas of notasPorLead) {
     if (!notas) continue
-    for (const [, fecha, admin] of notas.matchAll(REGEX_GESTION)) {
+    for (const [, fecha, admin] of Array.from(notas.matchAll(REGEX_GESTION))) {
       const actual = stats.get(admin) ?? { total: 0, ultima: '' }
       actual.total += 1
       if (fecha > actual.ultima) actual.ultima = fecha
