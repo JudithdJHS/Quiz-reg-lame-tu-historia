@@ -28,6 +28,7 @@ export interface LeadCRM {
   estado: EstadoLead
   ultimaGestion: string
   notas: string
+  skoolInviteFallido: boolean
 }
 
 export interface ActualizarLeadCampos {

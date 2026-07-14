@@ -5,6 +5,7 @@ export type EventoCheckout =
   | 'pago-aprobado'
   | 'pago-fallido'
   | 'pago-pendiente'
+  | 'skool-invite-fallido'
 
 export interface FilaEvento {
   evento: EventoCheckout
@@ -67,6 +68,7 @@ const EVENTOS_VALIDOS: readonly string[] = [
   'pago-aprobado',
   'pago-fallido',
   'pago-pendiente',
+  'skool-invite-fallido',
 ]
 
 /** Lee todos los eventos del embudo de compra (para derivar estado en el CRM). */

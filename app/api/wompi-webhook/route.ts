@@ -3,6 +3,7 @@ import { verificarEventoWompi, emailDesdeReferencia } from '@/lib/wompi'
 import { marcarPagado, marcarPagoFallido } from '@/lib/mailerlite-estados'
 import { registrarEvento } from '@/lib/sheets-eventos'
 import { enviarEmailAcceso, enviarEmailReintento } from '@/lib/emails-transaccionales'
+import { invitarASkool } from '@/lib/zapier-skool'
 
 interface TransaccionWompi {
   id?: string
@@ -72,10 +73,16 @@ export async function POST(req: NextRequest) {
       marcarPagado(email, nombre),
       registrarEvento({ evento: 'pago-aprobado', ...filaBase }),
       enviarEmailAcceso(email, nombre),
+      invitarASkool(email, nombre),
     ])
     resultados.forEach((r) => {
       if (r.status === 'rejected') console.error('Wompi APPROVED — acción falló:', r.reason)
     })
+    if (resultados[3].status === 'rejected') {
+      registrarEvento({ evento: 'skool-invite-fallido', ...filaBase }).catch((err) =>
+        console.error('No se pudo registrar el evento skool-invite-fallido:', err)
+      )
+    }
   } else if (tx.status === 'DECLINED' || tx.status === 'ERROR') {
     const resultados = await Promise.allSettled([
       marcarPagoFallido(email),

@@ -97,6 +97,7 @@ export async function leerLeads(): Promise<LeadCRM[]> {
         : estadoDesdeEventos(eventosDelLead) ?? 'lead'
 
       const telefonoEvento = eventosDelLead.find(e => e.whatsapp)?.whatsapp || ''
+      const skoolInviteFallido = eventosDelLead.some(e => e.evento === 'skool-invite-fallido')
 
       return {
         fila: i + 2,
@@ -116,6 +117,7 @@ export async function leerLeads(): Promise<LeadCRM[]> {
         estado,
         ultimaGestion: fila[14] || '',
         notas: fila[15] || '',
+        skoolInviteFallido,
       }
     })
     .filter(lead => lead.email !== '')

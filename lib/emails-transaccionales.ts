@@ -35,11 +35,10 @@ export async function enviarEmailAcceso(email: string, nombre?: string): Promise
     <div style="${ESTILO_BASE}">
       <h2 style="color: #6B783E; font-style: italic;">${saludo} pago fue confirmado.</h2>
       <p style="line-height: 1.7;">Bienvenido/a al taller <strong>Del Infierno al Cielo en el Matrimonio</strong>. Diste un paso que muchas personas posponen durante años — y lo diste hoy.</p>
-      <p style="line-height: 1.7;"><strong>Tu siguiente paso (2 minutos):</strong></p>
+      <p style="line-height: 1.7;"><strong>Tu siguiente paso:</strong></p>
       <ol style="line-height: 1.9;">
-        <li>Entra al grupo privado del taller con el botón de abajo.</li>
-        <li>Cuando Skool te pregunte <em>"¿con qué correo compraste?"</em>, responde con este mismo correo: <strong>${email}</strong></li>
-        <li>Aprobamos tu solicitud y el contenido se abre para ti.</li>
+        <li>En unos minutos te llega un correo aparte, directo de Skool, con tu acceso al taller ya desbloqueado — sin que tengas que pedir nada.</li>
+        <li>Ábrelo y entra con este mismo correo: <strong>${email}</strong></li>
       </ol>
       <p style="text-align: center; margin: 32px 0;">
         <a href="${urlSkool}" style="${ESTILO_BOTON}">Entrar al taller →</a>

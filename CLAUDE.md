@@ -32,12 +32,16 @@ Framework:     Next.js 14 con App Router
 Lenguaje:      TypeScript (strict mode)
 Estilos:       Tailwind CSS — sin librerías de componentes (no shadcn, no MUI)
 Tipografías:   Playfair Display (titulares) + Inter (cuerpo) — Google Fonts
-Email alerts:  Nodemailer con cuenta Gmail + App Password
-CRM:           Google Sheets API v4 con service account
-Email mktg:    MailerLite API v2
+Transacc.:     Resend API (correos de alerta de crisis y post-compra — ya NO Nodemailer/Gmail)
+CRM:           Google Sheets API v4 con service account (2 hojas: "Leads Quiz RTH" + "Eventos Checkout RTH")
+Email mktg:    MailerLite API v2 (perfiles del quiz + estados anti-fuga del checkout)
+Pagos:         Wompi (checkout embebido en /comprar, webhook server-to-server)
+Comunidad:     Skool (curso privado del taller; acceso automatizado vía Zapier)
 Deploy:        Vercel
-Estado:        sessionStorage (sin base de datos propia)
+Estado:        sessionStorage (quiz, sin base de datos propia)
 ```
+
+> **Nota (jul 2026):** este documento describe el build original del quiz (Mayo 2026). El proyecto creció mucho más allá de eso — ver la sección **22. SISTEMA DE COMPRA Y ACCESO (post-quiz)** al final de este archivo para todo lo que se construyó después: checkout con Wompi, panel /admin (CRM), y la automatización de acceso a Skool. Si algo en las secciones 1-21 contradice el código real, confía en el código — este documento no se actualizó en cada cambio.
 
 **NO usar:**
 - Librerías de componentes UI (shadcn, MUI, Chakra, etc.)
@@ -49,54 +53,60 @@ Estado:        sessionStorage (sin base de datos propia)
 
 ## 3. ESTRUCTURA DEL PROYECTO
 
+**Estructura real actual** (el quiz es solo la primera mitad de la app — ver sección 22 para lo que hace cada archivo nuevo):
+
 ```
 rth-quiz/
 ├── CLAUDE.md
+├── PENDIENTES.md                    ← pendientes operativos vivos (leer también)
 ├── README.md
 ├── .env.example
 ├── .env.local                       ← NO commitear
-├── next.config.js
-├── tailwind.config.js
-├── tsconfig.json
-├── public/
-│   ├── logo-rth.svg                 ← logo de RTH (incluido)
-│   ├── foto-ana-alex.jpg            ← foto principal juntos (RTH añadirá)
-│   ├── foto-ana.jpg                 ← foto de Ana (RTH añadirá)
-│   └── foto-alex.jpg                ← foto de Alex (RTH añadirá)
 ├── app/
 │   ├── layout.tsx
-│   ├── page.tsx                     ← bienvenida
-│   ├── quiz/
-│   │   └── page.tsx                 ← motor del quiz
-│   ├── resultado/
-│   │   └── page.tsx                 ← resultado (protegido)
+│   ├── page.tsx                     ← bienvenida (quiz)
+│   ├── quiz/page.tsx                ← motor del quiz
+│   ├── resultado/page.tsx           ← resultado del quiz (protegido, sessionStorage)
+│   ├── comprar/page.tsx             ← checkout embebido de Wompi
+│   ├── gracias-taller/page.tsx      ← página post-pago con instrucciones de acceso
+│   ├── admin/
+│   │   ├── page.tsx                 ← login del panel
+│   │   ├── dashboard/page.tsx
+│   │   └── pipeline/page.tsx        ← CRM tipo Kanban (leads → pagado → alumno)
 │   └── api/
-│       ├── submit/
-│       │   └── route.ts             ← clasificación + MailerLite + Sheets + email
-│       └── health/
-│           └── route.ts
+│       ├── submit/route.ts          ← quiz: clasificación + MailerLite + Sheets + alerta crisis
+│       ├── checkout-iniciado/route.ts  ← paso 1 del checkout, genera firma Wompi
+│       ├── wompi-webhook/route.ts   ← fuente de verdad del pago (server-to-server)
+│       ├── skool-webhook/route.ts   ← inbound: nuevo miembro Skool → MailerLite
+│       ├── admin/{leads,actualizar,login,logout}/route.ts
+│       └── health/route.ts
 ├── components/
-│   ├── QuizProgress.tsx
-│   ├── QuizCard.tsx
-│   ├── QuizOpcion.tsx
-│   ├── CapturaEmail.tsx
-│   ├── ResultadoCard.tsx
-│   ├── AnaAlexPresencia.tsx         ← foto + microcopy de acompañamiento
-│   └── RutaPortafolio.tsx
+│   ├── QuizProgress.tsx, QuizCard.tsx, QuizOpcion.tsx, CapturaEmail.tsx
+│   ├── ResultadoCard.tsx, AnaAlexPresencia.tsx, RutaPortafolio.tsx, RutaCamino.tsx
 ├── lib/
-│   ├── quiz-data.ts
-│   ├── resultados-data.ts
-│   ├── clasificador.ts
-│   ├── mailerlite.ts
-│   ├── sheets.ts
-│   └── mailer.ts
+│   ├── quiz-data.ts, resultados-data.ts, clasificador.ts    ← motor del quiz
+│   ├── mailerlite.ts                ← alta de leads del quiz (perfiles A-H)
+│   ├── mailerlite-estados.ts        ← estados anti-fuga del checkout (checkout-iniciado, pago-fallido, pagado)
+│   ├── sheets.ts                    ← CRM: leerLeads/actualizarLead (hoja "Leads Quiz RTH")
+│   ├── sheets-eventos.ts            ← registrarEvento/leerEventos (hoja "Eventos Checkout RTH")
+│   ├── sheets-client.ts             ← cliente compartido de Google Sheets API
+│   ├── wompi.ts                     ← firma de integridad + verificación de checksum del webhook
+│   ├── zapier-skool.ts              ← dispara el Zap que desbloquea el curso en Skool
+│   ├── emails-transaccionales.ts    ← correos de acceso/reintento (Resend)
+│   ├── mailer.ts                    ← alerta de crisis (Resend, ya NO Nodemailer/Gmail)
+│   ├── admin-auth.ts                ← login del panel /admin (cookie firmada)
+│   ├── admin-utils.ts
+│   └── urls.ts
 └── types/
-    └── quiz.ts
+    ├── quiz.ts
+    └── admin.ts                     ← EstadoLead, LeadCRM (panel /admin)
 ```
 
 ---
 
 ## 4. VARIABLES DE ENTORNO
+
+> Esta lista es la real (`.env.example` es la fuente de verdad — revisar ahí si hay dudas).
 
 ```bash
 # MailerLite
@@ -104,20 +114,43 @@ MAILERLITE_API_KEY=
 MAILERLITE_GROUP_ID_A=            # Secuencia A — Crisis
 MAILERLITE_GROUP_ID_B=            # Secuencia B — Exploración
 MAILERLITE_GROUP_ID_C=            # Secuencia C — Crecimiento
+MAILERLITE_GROUP_ID_COMPRADORES=  # Grupo "Compradores Taller" (lo asigna skool-webhook)
 
-# Google Sheets
+# Google Sheets (2 hojas en el mismo spreadsheet)
 GOOGLE_SHEETS_ID=
 GOOGLE_SERVICE_ACCOUNT_EMAIL=
 GOOGLE_PRIVATE_KEY=               # incluir \n tal como está en el JSON
 
-# Gmail / Nodemailer
-GMAIL_USER=
-GMAIL_APP_PASSWORD=
-ALERT_EMAIL_RECIPIENT=regalametuhistoria@gmail.com
+# Resend (alertas de crisis + correos post-compra — reemplazó a Gmail/Nodemailer)
+RESEND_API_KEY=
+ALERT_EMAIL_RECIPIENT=hola@regalametuhistoria.com
 
 # URLs de productos RTH
-NEXT_PUBLIC_URL_TALLER=https://www.regalametuhistoria.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio
-NEXT_PUBLIC_URL_MEMBRESIA=https://regalametuhistoria.systeme.io/membresiaparasanar2?utm_source=ig&utm_medium=social&utm_content=link_in_bio
+NEXT_PUBLIC_URL_TALLER=           # landing del taller en WordPress
+NEXT_PUBLIC_URL_MEMBRESIA=        # landing de la membresía en WordPress
+
+# Skool
+SKOOL_WEBHOOK_SECRET=             # verifica el webhook inbound de "nuevo miembro"
+URL_SKOOL_TALLER=                 # link de invitación/join de la comunidad Skool
+
+# Zapier → Skool (ver sección 22 — automatización de acceso al curso)
+ZAPIER_SKOOL_INVITE_WEBHOOK_URL=
+
+# Sistema Anti-fuga — grupos de estado en MailerLite
+MAILERLITE_GROUP_ID_CHECKOUT_INICIADO=
+MAILERLITE_GROUP_ID_PAGO_FALLIDO=
+
+# Wompi (checkout — ver sección 22)
+NEXT_PUBLIC_WOMPI_PUBLIC_KEY=
+WOMPI_INTEGRITY_SECRET=
+WOMPI_EVENTS_SECRET=
+WOMPI_AMOUNT_IN_CENTS=
+WOMPI_CURRENCY=COP
+
+# Panel /admin (CRM interno)
+ADMIN_USERS=                      # "Nombre:clave, Nombre2:clave2"
+ADMIN_PASSWORD=                   # fallback de un solo admin
+ADMIN_SESSION_SECRET=
 
 # App
 NEXT_PUBLIC_APP_URL=              # URL de Vercel o http://localhost:3000
@@ -698,13 +731,22 @@ const payload = {
 
 ---
 
-## 13. INTEGRACIÓN GOOGLE SHEETS (`lib/sheets.ts`)
+## 13. INTEGRACIÓN GOOGLE SHEETS (`lib/sheets.ts` + `lib/sheets-eventos.ts`)
+
+Mismo spreadsheet, **dos hojas** (ver sección 22 para el detalle completo del CRM):
 
 ```
-Nombre de la hoja: 'Leads Quiz RTH'
-Columnas: Timestamp | Nombre | Email | Perfil | Temperatura | Compromiso | Producto | Secuencia | ExAlumno | UTM_Source | UTM_Medium | UTM_Campaign
-Método: spreadsheets.values.append — nunca sobreescribir
-Auth: service account con google-auth-library
+Hoja 'Leads Quiz RTH' (lib/sheets.ts):
+Columnas: Timestamp | Nombre | Email | Perfil | Temperatura | Compromiso | Producto | Secuencia
+        | ExAlumno | UTM_Source | UTM_Medium | UTM_Campaign | Telefono | Estado | UltimaGestion | Notas
+Método: spreadsheets.values.append para altas — values.update (solo M:P) para editar desde /admin
+
+Hoja 'Eventos Checkout RTH' (lib/sheets-eventos.ts):
+Columnas: Timestamp | Evento | Nombre | Email | Whatsapp | Referencia | Monto | Moneda | TransaccionId | MetodoPago
+Eventos: checkout-iniciado | pago-aprobado | pago-fallido | pago-pendiente | skool-invite-fallido
+Método: append — cada evento es una fila nueva, nunca se sobreescribe (registro histórico del embudo)
+
+Auth: service account con google-auth-library (cliente compartido en lib/sheets-client.ts)
 ```
 
 ---
@@ -713,7 +755,7 @@ Auth: service account con google-auth-library
 
 ```typescript
 // Solo cuando: perfil === 'C' && compromiso === 'alto'
-// Nodemailer con Gmail + App Password
+// Resend API (RESEND_API_KEY) — ya NO Nodemailer/Gmail
 
 subject: '🚨 Lead prioritario — Perfil C (Crisis Aguda) · RTH Quiz'
 // Incluir: nombre, email, perfil, compromiso, fecha
@@ -1124,3 +1166,69 @@ No releas archivos que ya hayas leído salvo que hayan cambiado.
 No repitas código sin cambios en tus respuestas.
 Sin preámbulos, sin resúmenes al final, sin explicar lo obvio.
 Testea antes de dar por terminado.
+
+---
+
+## 22. SISTEMA DE COMPRA Y ACCESO (post-quiz) — construido después del build original
+
+Todo lo de abajo se agregó después del quiz inicial (secciones 1-21). El quiz termina en `/resultado`, que enlaza a `NEXT_PUBLIC_URL_TALLER` (la landing del taller en WordPress). Desde ahí, el flujo de negocio completo es:
+
+```
+WordPress (landing del taller) → /comprar (Wompi) → pago
+   → /gracias-taller (UI) + wompi-webhook (fuente de verdad, server-to-server)
+        ├─ MailerLite (marcarPagado)
+        ├─ Google Sheets "Eventos Checkout RTH" (registrarEvento) → alimenta /admin/pipeline
+        ├─ Email de acceso (Resend, lib/emails-transaccionales.ts)
+        └─ Zapier → Skool "Invite with custom course access" (lib/zapier-skool.ts)
+```
+
+### 22.1 Checkout (`app/comprar/page.tsx`, `lib/wompi.ts`)
+
+- El comprador llena nombre/email/whatsapp → `POST /api/checkout-iniciado` registra el intento (MailerLite + Sheets) y devuelve los parámetros firmados del widget de Wompi (`crearCheckout()` en `lib/wompi.ts`).
+- Se abre el widget embebido de Wompi (`WidgetCheckout`, cargado desde `checkout.wompi.co/widget.js`). Al aprobar, el callback del lado del cliente redirige a `/gracias-taller?nombre=...&email=...`.
+- El widget del cliente **no es la fuente de verdad** — puede cerrarse el navegador antes de que dispare. La fuente de verdad real es el webhook server-to-server de Wompi.
+
+### 22.2 Webhook de Wompi (`app/api/wompi-webhook/route.ts`)
+
+- Verifica el checksum del evento con `verificarEventoWompi()` (`lib/wompi.ts`, SHA256 con `WOMPI_EVENTS_SECRET`) antes de procesar nada.
+- En `status === 'APPROVED'`, dispara en paralelo (`Promise.allSettled`, ninguna acción bloquea a las demás ni bloquea la respuesta 200 a Wompi):
+  1. `marcarPagado()` (`lib/mailerlite-estados.ts`) — mueve el contacto a "pagado" en MailerLite, lo saca de los grupos anti-fuga.
+  2. `registrarEvento({evento:'pago-aprobado',...})` (`lib/sheets-eventos.ts`) — fila en "Eventos Checkout RTH". Esto es lo único que determina que un lead se vea como **"Pagado"** en `/admin/pipeline` (ver `estadoDesdeEventos()` en `lib/sheets.ts` — un solo evento `pago-aprobado` basta, sin importar qué más pase).
+  3. `enviarEmailAcceso()` (`lib/emails-transaccionales.ts`, Resend) — correo cálido de confirmación; avisa que llega un correo aparte de Skool con el acceso directo.
+  4. `invitarASkool()` (`lib/zapier-skool.ts`) — ver 22.4.
+- En `DECLINED`/`ERROR`/`VOIDED`: `marcarPagoFallido()` + evento `pago-fallido` + `enviarEmailReintento()` (con los métodos alternativos: PSE, Nequi, Bancolombia en cuotas).
+- Si `invitarASkool()` falla específicamente, se registra además el evento `skool-invite-fallido` — no bloqueante, solo para trazabilidad (ver 22.4).
+
+### 22.3 Sistema anti-fuga (`lib/mailerlite-estados.ts`)
+
+Grupos de MailerLite (`MAILERLITE_GROUP_ID_CHECKOUT_INICIADO`, `MAILERLITE_GROUP_ID_PAGO_FALLIDO`) que marcan en qué punto del embudo de pago quedó alguien que no completó — para poder targetear esos estados con automatizaciones de reintento. Se limpian automáticamente cuando el pago se aprueba.
+
+### 22.4 Acceso automático a Skool (`lib/zapier-skool.ts`)
+
+**El curso del taller está marcado como "Private" en Skool** — nadie lo ve hasta que alguien lo desbloquea para ese miembro específico. Skool no tiene API pública; la única vía de automatización es Zapier (integración privada de Zapier con Skool).
+
+- `invitarASkool(email, nombre)` hace un solo POST (sin reintentos, `AbortSignal.timeout(8000)`) a `ZAPIER_SKOOL_INVITE_WEBHOOK_URL` — el "Catch Hook" de un Zap externo (configurado en la cuenta de Zapier del usuario, no en este repo).
+- Ese Zap ejecuta la acción de Skool **"Invite with custom course access"**: manda la invitación oficial de Skool con el curso ya desbloqueado, funciona incluso si la persona NO es miembro de Skool todavía (a diferencia de "Unlock a course for a member", que requiere que ya lo sea).
+- **Requiere Skool en plan Pro** ($99/mes) — esa acción de Zapier no existe en el plan Hobby/gratis.
+- Si falla, se registra el evento `skool-invite-fallido` (Sheets) y aparece un badge rojo "⚠ Skool falló — dar acceso a mano" en la tarjeta del lead en `/admin/pipeline` — para poder darle acceso manual de respaldo (⚙️ Membership → Courses en Skool) sin tener que revisar logs de Vercel.
+- Se descartó deliberadamente meter n8n como orquestador — sin API pública de Skool, hubiera sido un intermediario sin valor entre el webhook y Zapier.
+- Link de invitación/join general de la comunidad: `URL_SKOOL_TALLER` (usado en los correos, no otorga el curso por sí solo — el curso lo otorga específicamente el Zap).
+
+### 22.5 Webhook inbound de Skool (`app/api/skool-webhook/route.ts`)
+
+Distinto del anterior — este es *entrante*: un Zap separado en Skool ("nuevo miembro") le pega a esta ruta (verificada con `SKOOL_WEBHOOK_SECRET`) y marca a esa persona como `comprador_taller: 'si'` en el grupo `MAILERLITE_GROUP_ID_COMPRADORES` de MailerLite, con reintentos (3 intentos, 2.5s timeout c/u). Nota: dispara para *cualquier* nuevo miembro de la comunidad, no solo compradores del taller — si en el futuro la comunidad también aloja la membresía "Un camino para sanar" con miembros que no compraron el taller, esta lógica va a necesitar revisarse.
+
+### 22.6 Panel /admin — CRM (`app/admin/*`, `lib/sheets.ts`, `lib/admin-auth.ts`)
+
+- Login con cookie firmada (`ADMIN_USERS` o `ADMIN_PASSWORD` + `ADMIN_SESSION_SECRET`) — ver `lib/admin-auth.ts`.
+- `/admin/pipeline`: tablero tipo Kanban por `EstadoLead` (`types/admin.ts`: `lead → checkout-iniciado → pago-fallido/abandonado → pagado → alumno → miembro`). Cada tarjeta permite registrar gestión (con nota), cambiar estado a mano, y tiene un botón directo de WhatsApp con mensaje pre-armado según el estado.
+- El estado de cada lead se deriva de `leerLeads()` (`lib/sheets.ts`): si la columna "Estado" tiene algo escrito a mano, gana eso; si no, se deriva de los eventos de checkout (`estadoDesdeEventos()`).
+- `actualizarLead()` solo escribe las columnas M:P (Telefono/Estado/UltimaGestion/Notas) — nunca reescribe la fila completa ni las notas anteriores (se concatenan con fecha).
+
+### 22.7 Página de gracias (`app/gracias-taller/page.tsx`)
+
+Server component (lee `URL_SKOOL_TALLER` directo de `process.env`, no necesita `NEXT_PUBLIC_`). Recibe `?nombre=&email=` por query string desde el callback del widget de Wompi en `/comprar`. Muestra las mismas instrucciones que el correo de Resend — deben decir lo mismo para no contradecirse (ninguna de las dos menciona ya "aprobar solicitud": eso desapareció con la automatización de 22.4).
+
+### Pendientes operativos
+
+Ver `PENDIENTES.md` — se actualiza ahí, no aquí, porque cambia con más frecuencia que este documento.

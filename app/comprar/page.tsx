@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Script from 'next/script'
 
 interface CheckoutParams {
@@ -51,6 +52,7 @@ function formatearMonto(amountInCents: number, currency: string): string {
 }
 
 export default function ComprarPage() {
+  const router = useRouter()
   const [paso, setPaso] = useState<Paso>('datos')
   const [nombre, setNombre] = useState('')
   const [email, setEmail] = useState('')
@@ -104,9 +106,14 @@ export default function ComprarPage() {
     })
     widget.open((result) => {
       const status = result?.transaction?.status
-      if (status === 'APPROVED') setPaso('aprobado')
-      else if (status === 'DECLINED' || status === 'ERROR') setPaso('rechazado')
-      else setPaso('pendiente')
+      if (status === 'APPROVED') {
+        const params = new URLSearchParams({ nombre, email })
+        router.push(`/gracias-taller?${params.toString()}`)
+      } else if (status === 'DECLINED' || status === 'ERROR') {
+        setPaso('rechazado')
+      } else {
+        setPaso('pendiente')
+      }
     })
   }
 

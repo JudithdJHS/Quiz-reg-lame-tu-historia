@@ -107,6 +107,11 @@ function TarjetaLead({
             {lead.utmSource}
           </span>
         )}
+        {lead.skoolInviteFallido && (
+          <span style={{ fontFamily: fuente, fontSize: '0.6875rem', backgroundColor: '#FAECE7', color: '#BD886A', padding: '2px 8px', borderRadius: '999px', fontWeight: 700 }}>
+            ⚠ Skool falló — dar acceso a mano
+          </span>
+        )}
       </div>
 
       <p style={{ fontFamily: fuente, fontSize: '0.6875rem', color: sinGestion ? '#C49E50' : '#BD886A', fontWeight: sinGestion ? 700 : 400, marginBottom: '10px' }}>
