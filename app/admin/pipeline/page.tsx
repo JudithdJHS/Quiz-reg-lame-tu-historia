@@ -34,6 +34,17 @@ function mensajeWhatsApp(estado: EstadoLead, nombre: string): string {
   }
 }
 
+const TIPOS_GESTION = [
+  'Contactado por WhatsApp',
+  'Contactado por llamada',
+  'Sin respuesta',
+  'Interesado, en seguimiento',
+  'Reagendó / pidió más tiempo',
+  'No le interesa',
+  'Resuelto — pasó a pagar',
+  'Otra',
+]
+
 const fuente = 'var(--font-poppins), sans-serif'
 
 function TarjetaLead({
@@ -44,6 +55,7 @@ function TarjetaLead({
   onActualizar: (email: string, campos: { estado?: EstadoLead; nota?: string; registrarGestion?: boolean }) => Promise<boolean>
 }) {
   const [notaAbierta, setNotaAbierta] = useState(false)
+  const [tipoGestion, setTipoGestion] = useState('')
   const [textoNota, setTextoNota] = useState('')
   const [guardando, setGuardando] = useState(false)
 
@@ -58,13 +70,15 @@ function TarjetaLead({
 
   async function guardarGestion() {
     if (guardando) return
+    const nota = tipoGestion === 'Otra' ? textoNota.trim() : tipoGestion
     setGuardando(true)
     const ok = await onActualizar(lead.email, {
       registrarGestion: true,
-      ...(textoNota.trim() && { nota: textoNota.trim() }),
+      ...(nota && { nota }),
     })
     setGuardando(false)
     if (ok) {
+      setTipoGestion('')
       setTextoNota('')
       setNotaAbierta(false)
     }
@@ -128,15 +142,29 @@ function TarjetaLead({
 
       {notaAbierta && (
         <div style={{ marginBottom: '10px' }}>
-          <textarea
-            value={textoNota}
-            onChange={e => setTextoNota(e.target.value)}
-            placeholder="Nota de la gestión (opcional)"
-            rows={2}
+          <select
+            value={tipoGestion}
+            onChange={e => setTipoGestion(e.target.value)}
             autoFocus
             className="w-full outline-none"
-            style={{ fontFamily: fuente, fontSize: '0.75rem', padding: '8px', border: '1px solid #E0D5C4', borderRadius: '6px', backgroundColor: '#FDFAF6', color: '#3D3520', resize: 'vertical' }}
-          />
+            style={{ fontFamily: fuente, fontSize: '0.75rem', padding: '8px', border: '1px solid #E0D5C4', borderRadius: '6px', backgroundColor: '#FDFAF6', color: '#3D3520', marginBottom: '6px' }}
+          >
+            <option value="">Selecciona un tipo de gestión (opcional)</option>
+            {TIPOS_GESTION.map(t => (
+              <option key={t} value={t}>{t}</option>
+            ))}
+          </select>
+          {tipoGestion === 'Otra' && (
+            <textarea
+              value={textoNota}
+              onChange={e => setTextoNota(e.target.value)}
+              placeholder="Describe la gestión"
+              rows={2}
+              autoFocus
+              className="w-full outline-none"
+              style={{ fontFamily: fuente, fontSize: '0.75rem', padding: '8px', border: '1px solid #E0D5C4', borderRadius: '6px', backgroundColor: '#FDFAF6', color: '#3D3520', resize: 'vertical' }}
+            />
+          )}
           <div style={{ display: 'flex', gap: '6px', marginTop: '6px' }}>
             <button
               onClick={guardarGestion}
@@ -146,7 +174,7 @@ function TarjetaLead({
               {guardando ? 'Guardando…' : 'Guardar gestión'}
             </button>
             <button
-              onClick={() => { setNotaAbierta(false); setTextoNota('') }}
+              onClick={() => { setNotaAbierta(false); setTipoGestion(''); setTextoNota('') }}
               style={{ fontFamily: fuente, fontSize: '0.75rem', color: '#BD886A', padding: '6px 12px', borderRadius: '6px', cursor: 'pointer' }}
             >
               Cancelar

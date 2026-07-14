@@ -19,7 +19,7 @@
 - [ ] En Zapier: crear un Zap con trigger "Webhooks by Zapier → Catch Hook", acción Skool → "Invite with custom course access", conectado con el API key + URL del grupo (`skool.com/regalame-tu-historia-5976`), seleccionando el curso "Taller del Infierno al cielo en el matrimonio", mapeando el email del payload entrante.
 - [ ] Copiar esa URL de Catch Hook a `ZAPIER_SKOOL_INVITE_WEBHOOK_URL` en `.env.local` y en Vercel, luego redeploy.
 - [ ] **Bloqueado, 100% del lado de Yudit**: falta crear la cuenta en comercios.wompi.co y que el cliente (Ana y Alex / RTH) la apruebe. Sin eso no hay llaves que sacar. Después de aprobada: sacar `NEXT_PUBLIC_WOMPI_PUBLIC_KEY`, `WOMPI_INTEGRITY_SECRET`, `WOMPI_EVENTS_SECRET`, `WOMPI_AMOUNT_IN_CENTS` (Configuración → Llaves API) y registrar el webhook `https://quiz-reg-lame-tu-historia.vercel.app/api/wompi-webhook` ahí.
-- [ ] Llenar `URL_SKOOL_TALLER=https://www.skool.com/regalame-tu-historia-5976/about`.
+- [x] `URL_SKOOL_TALLER` ya está en Vercel.
 - [ ] En Skool: configurar los planes/pricing para la futura membresía "Un camino para sanar" (independiente de esto — el taller usa "Private" + Zapier, no un tier de Pricing).
 
 Sin las variables de Wompi + Skool + Zapier, el checkout completo no funciona todavía en producción — el código ya está listo y verificado (`tsc --noEmit` limpio, webhook probado localmente simulando un pago aprobado), solo falta la configuración externa.
@@ -35,20 +35,18 @@ Sin las variables de Wompi + Skool + Zapier, el checkout completo no funciona to
 
 Ya están: `GOOGLE_PRIVATE_KEY`, `GOOGLE_SERVICE_ACCOUNT_EMAIL`, `GOOGLE_SHEETS_ID`, `ADMIN_SESSION_SECRET`, `ADMIN_PASSWORD`, `NEXT_PUBLIC_URL_MEMBRESIA`, `NEXT_PUBLIC_URL_TALLER`, `MAILERLITE_API_KEY`, `ALERT_EMAIL_RECIPIENT`, `MAILERLITE_GROUP_ID_A/B/C`, `RESEND_API_KEY`. (`GMAIL_APP_PASSWORD`/`GMAIL_USER` también están pero ya no se usan — se puede limpiar cuando haya tiempo.)
 
+Ya en Vercel (agregadas 14 jul 2026): `SKOOL_WEBHOOK_SECRET`, `MAILERLITE_GROUP_ID_COMPRADORES`, `URL_SKOOL_TALLER`, `NEXT_PUBLIC_APP_URL`.
+
+- [x] `MAILERLITE_GROUP_ID_CHECKOUT_INICIADO` / `MAILERLITE_GROUP_ID_PAGO_FALLIDO` ya están en Vercel.
+
 Falta agregar (bloqueante para checkout + Skool):
-- [ ] `SKOOL_WEBHOOK_SECRET`
-- [ ] `MAILERLITE_GROUP_ID_COMPRADORES`
-- [ ] `URL_SKOOL_TALLER`
 - [ ] `ZAPIER_SKOOL_INVITE_WEBHOOK_URL` (cuando exista el Zap)
-- [ ] `NEXT_PUBLIC_WOMPI_PUBLIC_KEY`, `WOMPI_INTEGRITY_SECRET`, `WOMPI_EVENTS_SECRET`, `WOMPI_AMOUNT_IN_CENTS`, `WOMPI_CURRENCY`
-- [x] `MAILERLITE_GROUP_ID_CHECKOUT_INICIADO` / `MAILERLITE_GROUP_ID_PAGO_FALLIDO` — grupos creados en MailerLite (14 jul 2026) y ya están en `.env.local`. Falta copiarlas a Vercel.
-- [ ] `NEXT_PUBLIC_APP_URL`
+- [ ] `NEXT_PUBLIC_WOMPI_PUBLIC_KEY`, `WOMPI_INTEGRITY_SECRET`, `WOMPI_EVENTS_SECRET`, `WOMPI_AMOUNT_IN_CENTS`, `WOMPI_CURRENCY` — bloqueado en la cuenta de Wompi (ver sección 0).
 
 ## 3. Deploy y prueba del panel /admin
 
-- [ ] Hacer deploy a Vercel (o push a main)
-- [ ] Entrar a `tudominio/admin` con la clave
-- [ ] Verificar que cargan los leads del Sheet
+- [x] Deploy hecho (14 jul 2026) — código en producción.
+- [x] Login y carga de leads verificado en vivo (14 jul 2026) — se probó un envío real del quiz (`/api/submit`) y apareció al instante en el panel.
 - [ ] Probar: mover un lead de estado, registrar una gestión con nota, abrir WhatsApp desde una tarjeta
 - [ ] Confirmar que los cambios aparecen en el Sheet (columnas N, O, P)
 
@@ -75,6 +73,13 @@ Cada vez que alguien compre en Skool:
 - [ ] Poner el campo `comprador_taller` = `si`
 
 *(Cuando haya tiempo: configurar Make para automatizar esto — Skool "Watch New Members" → MailerLite "Add to Group".)*
+
+## 7. Google Sheet — transferir propiedad a la cuenta de Workspace de RTH
+
+El Sheet "Leads Quiz RTH" (con la pestaña "Eventos Checkout RTH") está creado con la cuenta personal de Yudit — decidido a propósito (14 jul 2026) dejarlo así por ahora para validar que todo funcione, y transferir la propiedad a la cuenta de Google Workspace de RTH más adelante.
+
+- [ ] Transferir propiedad del Sheet a la cuenta de Workspace de RTH (Compartir → agregar el correo → "Transferir propiedad"). Esto mantiene el mismo `GOOGLE_SHEETS_ID` — no requiere tocar el código ni las variables de entorno.
+- Nota: si el Workspace tiene restringida la aceptación de transferencias externas, puede necesitar que un admin del Workspace lo habilite primero. Alternativa sin transferir propiedad: compartir con permiso de Editor (funciona igual para la app, pero la propiedad legal del archivo se queda con la cuenta personal).
 
 ---
 
