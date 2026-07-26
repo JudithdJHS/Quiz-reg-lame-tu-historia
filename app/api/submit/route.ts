@@ -35,14 +35,25 @@ export async function POST(req: NextRequest) {
       utmCampaign,
     }
 
-    await Promise.allSettled([
+    const destinos = ['GoHighLevel', 'Google Sheets']
+    if (payload.flagAlertaCrisis) destinos.push('Alerta de crisis')
+
+    const resultados = await Promise.allSettled([
       registrarEnGHL(payload),
       registrarEnSheets(payload),
       ...(payload.flagAlertaCrisis ? [enviarAlertaCrisis(payload)] : []),
     ])
 
+    // Nunca fallar en silencio: un lead perdido sin rastro es peor que un error visible.
+    resultados.forEach((r, i) => {
+      if (r.status === 'rejected') {
+        console.error(`[submit] ${destinos[i]} fallo para ${payload.email}:`, r.reason)
+      }
+    })
+
     return NextResponse.json({ ok: true })
-  } catch {
+  } catch (error) {
+    console.error('[submit] error inesperado:', error)
     return NextResponse.json({ ok: true })
   }
 }
