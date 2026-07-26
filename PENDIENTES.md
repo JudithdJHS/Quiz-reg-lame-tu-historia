@@ -83,6 +83,16 @@ El Sheet "Leads Quiz RTH" (con la pestaña "Eventos Checkout RTH") está creado 
 
 ---
 
+## 8. Cuidado con el botón de WhatsApp del panel (riesgo de bloqueo de cuenta)
+
+El botón "WhatsApp" en cada tarjeta de `/admin/pipeline` abre un chat pre-llenado (`wa.me`) en tu WhatsApp normal — no manda nada automático, es manual, un contacto a la vez. Bajo riesgo, pero no cero:
+
+- No mandar el mismo mensaje genérico a muchos números seguidos en poco tiempo (patrón de spam para WhatsApp).
+- Personalizar el mensaje cuando se pueda, no solo dejar la plantilla tal cual.
+- El riesgo sube con el volumen — si el número de leads crece mucho, considerar la API oficial de WhatsApp Business en vez de esto.
+
+---
+
 ## Referencia rápida
 
 | Qué | Dónde |
