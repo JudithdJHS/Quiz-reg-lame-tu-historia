@@ -98,6 +98,7 @@ export interface SubmitPayload {
   esExAlumno: boolean
   flagAlertaCrisis: boolean
   etiqueta: string
+  nombrePerfil: string
   producto: string
   utmSource?: string
   utmMedium?: string

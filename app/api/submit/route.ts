@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { clasificar } from '@/lib/clasificador'
-import { registrarEnMailerLite } from '@/lib/mailerlite'
+import { registrarEnGHL } from '@/lib/gohighlevel'
 import { registrarEnSheets } from '@/lib/sheets'
 import { enviarAlertaCrisis } from '@/lib/mailer'
 import { RESULTADOS } from '@/lib/resultados-data'
@@ -28,6 +28,7 @@ export async function POST(req: NextRequest) {
       esExAlumno: clasificacion.esExAlumno,
       flagAlertaCrisis: clasificacion.flagAlertaCrisis,
       etiqueta: resultado.etiqueta,
+      nombrePerfil: resultado.nombre,
       producto: resultado.primerPaso,
       utmSource,
       utmMedium,
@@ -35,7 +36,7 @@ export async function POST(req: NextRequest) {
     }
 
     await Promise.allSettled([
-      registrarEnMailerLite(payload),
+      registrarEnGHL(payload),
       registrarEnSheets(payload),
       ...(payload.flagAlertaCrisis ? [enviarAlertaCrisis(payload)] : []),
     ])
